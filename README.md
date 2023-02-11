@@ -4,7 +4,7 @@ The objective of this workshop is to introduce basic R programming knowledge and
 Topics that will be covered in this wo
 
 | Lesson | Topic | Description | Time |
-|----------|----------|----------|
+|----------|----------|----------|----------|
 | 1 | Introduction | An introduction to of what R is and RStudio | 10 minutes|
 | 2 | Basic Data Types & Structures | An introduction to R's basic data types and data structures such as vectors, lists, matrices, and dataframes | |
 | 3 | Importing & Exporting Data in R | A demonstration on how to import and export data into R, including how to read and write common file types such as csv,tsv, sav, xlsx| |
