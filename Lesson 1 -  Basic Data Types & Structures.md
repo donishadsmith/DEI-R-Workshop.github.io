@@ -7,7 +7,8 @@ Variables are objects that can contain a data type, multiple data types, a funct
 ### General rules of variables in R (rules broadly applicable to many other languages):
 
 - The first character of a variable **ALWAYS** must be a letter from a-z or A-Z. A variable can a single letter (a) or a series of letters names (myvariable). 
---
+* Valid variable names:
+* 
 - 
 - In R, variables can contain numbers, the underscore and the period.Variables cannot contain any other symbols or symbols used for arithmetic operations or logical operations. While a1, my_variable, my.variable_2 are valid names for variables, 1a, my-var, var+1 are invalid variable names.
 
