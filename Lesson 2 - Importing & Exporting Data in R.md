@@ -8,11 +8,11 @@ In this lesson, we will cover how to import and export data with common file ext
 
 `R` has built-in functions to import export comma-separated values(csv) and tab-separated values(tsv) files. 
 
-To import csv files into `R`, you can use `read.csv()` and to import tsv files, you can use `read.table()`
+To import csv files into `R`, you can use `read.csv()` and to import tsv files, you can use `read.table()`.
 
 Both functions have multiple arguments; however, some arguments that are most commonly used are:
 
-- `file =` : To specify the location of the file that you are importing. You can use the absolute path location (full path from the root) to your file or the relative path location (location relative to your current working directory)
+- `file =` : To specify the location of the file that you are importing. You can use the absolute path location (full path from the root) to your file or the relative path location (location relative to your current working directory).
 
 - `header =` : This argument only accepts logical arguments (```TRUE``` or ```FALSE```) and defaults to ```header = TRUE```. If set to ```TRUE```, the first line in your will be used as the column names of your data frame. If set to ```FALSE```, `R` will use default column names for your data frame.
 
