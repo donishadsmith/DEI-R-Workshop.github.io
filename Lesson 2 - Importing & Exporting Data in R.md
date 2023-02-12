@@ -18,7 +18,7 @@ Both functions have multiple arguments; however, some arguments that are most co
 
 - `sep =` : This argument specifies the deliminator, a character that separates the values in your file. For `read.csv()` this argument defaults to `sep = ","` and for read.table() this argument defaults to `sep = ""` (which will recognize values separated by one or two spaces and tabs). You usually won't need to change this parameter, unless the deliminator is not separated by the character in the default argument.
 
-*Note: Each argument must be separated by a comma.*
+*Note: Each argument must be separated by a comma (`,`).*
 
 You can check your current working directory by using `getwd()` if you want to use a relative path to import your data. 
 
