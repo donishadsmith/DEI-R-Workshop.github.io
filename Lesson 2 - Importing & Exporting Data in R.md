@@ -85,7 +85,7 @@ install.packages("readxl") # Package that has functions to read excel data into 
 ----
 To use the functions in a package, you can either:
 
-- Load it into the `R`'s search path using `library()` to access the functions.
+- Load it into the `R`'s search path using `library()`.
 
 ----
 **R Code:**
@@ -96,7 +96,7 @@ library(readxl)
 data <- read_xlsx(path = "C:/Users/Documents/iris.xlsx")
 ```
 ----
-- Access the contents in a package using the double colon operator(`::`)
+- Access the contents in a package using the double colon operator(`::`).
 
 ----
 **R Code:*
@@ -106,7 +106,7 @@ data <- readxl::read_xlsx(path = "C:/Users/Documents/iris.xlsx")
 ----
 ## Exporting Data
 
-R has built-in functions to save csv and tsv files
+R has built-in functions to save csv and tsv files.
 
 To save csv files, you can use `write.csv()`, and the save tsv files you can use `write.tsv()`.
 
