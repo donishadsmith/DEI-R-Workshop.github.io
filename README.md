@@ -13,6 +13,7 @@ Topics that will be covered in this wo
 
 ## Installation
 [R](https://cran.rstudio.com/)
+
 [RStudio](https://posit.co/download/rstudio-desktop/)
 
 RStudio requires R 3.3.0+. Make sure to download the correct version of R for your operating system.
