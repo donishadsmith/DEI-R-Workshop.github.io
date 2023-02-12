@@ -86,25 +86,25 @@ The most common arguments that you will use in these functions are:
 
 #### Exporting csv file:
 
-----
+---
 **R Code:**
 ```R
 write.csv(x = "C:/Users/Documents/iris.csv")
 ```
-----
+---
 #### Exporting tsv file:
 
-----
+---
 **R Code:**
 ```R
 write.table(x = "C:/Users/Documents/iris.tsv", sep = "\t")
 ```
-----
+---
 #### Exporting Excel file
 
-----
+---
 R does not have a built-in function to export Excel files. A good package to use is `xlsx`. This package requires [Java](https://www.java.com/en/download/) to be installed on your machine to work
-----
+---
 
 **R Code:**
 ```R
@@ -113,5 +113,5 @@ library(xlsx)
 
 write.xlsx(x = "C:/Users/Documents/iris.xlsx")
 ```
-----
+---
 
