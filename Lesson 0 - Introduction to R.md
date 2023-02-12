@@ -9,7 +9,6 @@ Additionally, R is also an interpreted language. This means that the R interpret
 
 ----
 #### **R Code:**
-
 ```R
 # In R, comments are created by adding the hashtag before your sentence so that the interpretor knows that they are comments.
 print("Hello World!") #Interpreter reads and translates this line first
@@ -18,17 +17,17 @@ print("My name is _") #Then the interpreter reads and translates this line next
 ----
 #### **Output:**
 <p>
-
 ```
    [1] "Hello World!"
    [1] "My name is _"
 ```
-
 </p>
-
 ----
 
 Because each line is translated and executed one line at a time, if the interpreter detects a syntax error, it will stop executing the program and produce an error. Any code under the line producing the error will not be executed.
+
+----
+#### **R Code:**
 
 ```R
 print("Hello World!") 
