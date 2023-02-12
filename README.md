@@ -13,7 +13,7 @@ Topics that will be covered in this wo
 
 ## Installation
 
-
+[R Studio](https://posit.co/download/rstudio-desktop/)
 
 
 
