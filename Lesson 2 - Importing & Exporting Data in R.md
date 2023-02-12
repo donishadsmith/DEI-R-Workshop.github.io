@@ -76,11 +76,12 @@ R does not have a built-in function to read Excel files.
 
 In R, you can download and install packages that will allow you to use additional useful functions, using the install.packages().The `install.packages()` function has a `repos =` argument to specify the download location of the package you wish to install. This argument automatically defaults to downloading packages from Comprehensive R Archive Network (CRAN) (`repos = "http://cran.us.r-project.org"`), which is the main repository for R packages. The majority of the R packages that you will need will already be on CRAN. 
 
+`readxl` uses the `path =` as the argument to specify your file's location.
 ----
 **R Code:**
 ```R
 #Name of the package must be in quotes
-install.packages("readxl") # Package that has functions to read excel data into R
+install.packages("readxl")
 ```
 ----
 To use the functions in a package, you can either:
@@ -113,7 +114,9 @@ To save csv files, you can use `write.csv()`, and the save tsv files you can use
 The most common arguments that you will use in these functions are:
 
 - `x = ` : Specify the name of the object (variable) containing the data that you wish to save.
-
+  
+- `file = ` : To specify the location that you want your file to be saved and to specify the name of your file.
+  
 - `sep = ` : Specify what you want the values in you file to be separated by. For `write.csv()`, this argument defaults to `sep = ","` and will ignore any changes to this argument that you attempt make. 
 
 #### Exporting csv file:
@@ -129,7 +132,7 @@ write.csv(x = "C:/Users/Documents/iris.csv")
 ----
 **R Code:**
 ```R
-write.table(x = "C:/Users/Documents/iris.tsv", sep = "\t")
+write.table(x = data, file = "C:/Users/Documents/iris.tsv", sep = "\t")
 ```
 ----
 #### Exporting Excel file:
@@ -137,6 +140,7 @@ write.table(x = "C:/Users/Documents/iris.tsv", sep = "\t")
 ----
 R does not have a built-in function to export Excel files. A good package to use is `xlsx`. This package requires [Java](https://www.java.com/en/download/) to be installed on your machine to work.
 
+`xlsx` also uses the `x =` and `file =` arguments but does not have a `sep =` argument.
 ----
 
 **R Code:**
@@ -144,7 +148,7 @@ R does not have a built-in function to export Excel files. A good package to use
 install.packages("xlsx")
 library(xlsx)
 
-write.xlsx(x = "C:/Users/Documents/iris.xlsx")
+write.xlsx(x = data, file = "C:/Users/Documents/iris.xlsx")
 ```
 ----
 
