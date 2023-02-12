@@ -5,7 +5,7 @@
 Variables are objects that can contain a data type, multiple data types, a function, or a data structure.
 
 #### General rules of variables in R (rules broadly applicable to many other languages):
-
+> dddd
 - The first character of a variable **ALWAYS** must be a letter from a-z or A-Z. A variable can a single letter (a) or a series of letters names (myvariable). 
 * Valid variable names:
 * 
