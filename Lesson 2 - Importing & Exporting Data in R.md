@@ -43,8 +43,21 @@ You can change your working directory using, `setwd()`
 **R Code:**
 ```R
 setwd("C:/Users/Documents/")
+  
 getwd()
-```
+``` 
+  
+**Output:**
+  
+<p>
+  
+  ```
+ [1] "C:/Users/Documents/R MarkDown Files"  
+  ```
+  
+<p>  
+
+  
 ----
 
 #### Importing a csv file:
@@ -96,8 +109,26 @@ To use the functions in a package, you can either:
 library(readxl)
 
 data <- read_xlsx(path = "C:/Users/Documents/iris.xlsx")
+  
+#Using `R`'s `search()` function shows that the package is now in the search path with the other base R packages
+#that are automatically loaded in when R is activated
+search()
 ```
 ----
+**Output:**
+  
+<p>
+  
+  ```
+ [1] ".GlobalEnv"        "package:readxl"    "tools:rstudio"    
+ [4] "package:stats"     "package:graphics"  "package:grDevices"
+ [7] "package:utils"     "package:datasets"  "package:methods"  
+ [10] "Autoloads"        "package:base"   
+  ```
+  
+<p>  
+
+----  
 - Access the contents in a package using the double colon operator(`::`).
 
 ----
