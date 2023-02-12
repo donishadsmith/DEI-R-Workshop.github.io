@@ -1,5 +1,58 @@
 # Lesson 1 -  Basic Data Types & Structures
 
+In this lesson, we will cover some 
+
+`R` has several data types.
+
+The most common types are:
+
+Numeric: 
+
+----
+#### **R Code:**
+```R
+# In R, comments are created by adding the hashtag before your sentence so that the interpretor knows that they are comments.
+print("Hello World!") #Interpreter reads and translates this line first
+print("My name is _") #Then the interpreter reads and translates this line next
+```
+#### **Output:**
+
+<p>
+   
+```
+   [1] "Hello World!"
+   [1] "My name is _"
+```
+   
+</p>
+
+----
+
+
+`R` also has several data structures.
+
+The most common data structures are:
+
+.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## Variables
 
 Variables are objects that can contain a data type, multiple data types, a function, or a data structure.
@@ -8,7 +61,7 @@ Variables are objects that can contain a data type, multiple data types, a funct
 > dddd
 > 
 > 
-- The first character of a variable **ALWAYS** must be a letter from a-z or A-Z. A variable can a single letter (a) or a series of letters names (myvariable). 
+- The first character of a variable **ALWAYS** must be a letter from ```a-z``` or ```A-Z```. A variable can a single letter (a) or a series of letters names (myvariable). 
 * Valid variable names:
 * 
 - 
