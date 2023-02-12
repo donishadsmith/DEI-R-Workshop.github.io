@@ -32,7 +32,17 @@ Error: unexpected symbol in:
 "print("Incorrect syntax" 
 print"
 ```
+<details><summary>CLICK ME</summary>
+<p>
 
+#### We can hide anything, even code!
+
+```ruby
+   puts "Hello World"
+```
+
+</p>
+</details>
 ## What is R Studio
 
 R Studio is an integrated development environment(IDE), which is a graphical user interface(GUI) that makes R easier to use.
