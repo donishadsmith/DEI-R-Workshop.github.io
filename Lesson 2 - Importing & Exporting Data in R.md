@@ -77,6 +77,7 @@ R does not have a built-in function to read Excel files.
 In R, you can download and install packages that will allow you to use additional useful functions, using the install.packages().The `install.packages()` function has a `repos =` argument to specify the download location of the package you wish to install. This argument automatically defaults to downloading packages from Comprehensive R Archive Network (CRAN) (`repos = "http://cran.us.r-project.org"`), which is the main repository for R packages. The majority of the R packages that you will need will already be on CRAN. 
 
 `readxl` uses the `path =` as the argument to specify your file's location.
+  
 ----
 **R Code:**
 ```R
@@ -93,7 +94,7 @@ To use the functions in a package, you can either:
 ```R
 #Name of the package should not be in quotes
 library(readxl)
-# The argument to specify your file location `path = `
+
 data <- read_xlsx(path = "C:/Users/Documents/iris.xlsx")
 ```
 ----
@@ -147,6 +148,7 @@ R does not have a built-in function to export Excel files. A good package to use
 **R Code:**
 ```R
 install.packages("xlsx")
+        
 library(xlsx)
 
 write.xlsx(x = data, file = "C:/Users/Documents/iris.xlsx")
