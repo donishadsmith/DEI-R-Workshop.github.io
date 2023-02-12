@@ -14,7 +14,7 @@ Both functions have multiple arguments; however, some arguments that are most co
 
 - `file =` : To specify the location of the file that you are importing. You can use the absolute path location (full path from the root) to your file or the relative path location (location relative to your current working directory)
 
-- `header =` : This argument only accepts logical arguments (```R TRUE``` or ```R FALSE```) and defaults to ```header = TRUE```. If set to ```R TRUE```, the first line in your will be used as the column names of your data frame. If set to ```R FALSE```, `R` will use default column names for your data frame.
+- `header =` : This argument only accepts logical arguments (```TRUE``` or ```FALSE```) and defaults to ```header = TRUE```. If set to ```TRUE```, the first line in your will be used as the column names of your data frame. If set to ```FALSE```, `R` will use default column names for your data frame.
 
 - `sep =` : This argument specifies the deliminator, a character that separates the values in your file. For `read.csv()` this argument defaults to `sep = ","` and for read.table() this argument defaults to `sep = ""` (which will recognize values separated by one or two spaces and tabs). You usually won't need to change this parameter, unless the deliminator is not separated by the character in the default argument.
 
