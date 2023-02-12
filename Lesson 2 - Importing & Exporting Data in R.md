@@ -27,6 +27,16 @@ You can check your current working directory by using `getwd()` if you want to u
 ```R
 getwd()
 ```
+**Output:**
+
+<p>
+  
+  ```
+  [1] "C:/Users/Documents/R MarkDown Files"
+  ``` 
+<p>
+
+----
 You can change your working directory using, `setwd()`
 
 ----
