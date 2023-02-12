@@ -12,8 +12,8 @@ Additionally, R  is an interpreted language. This means that the R interpreter r
 print("Hello World!") #Interpreter reads and translates this line first
 print("My name is _") #Then the interpreter reads and translates this line next
 ```
+```
 Output:
-```R
 [1] "Hello World!"
 [1] "My name is _"
 ```
@@ -25,8 +25,8 @@ print("Hello World!")
 print("Incorrect syntax" 
 print("My name is _") 
 ```
+```
 Output:
-```R
 [1] "Hello World!"
 Error: unexpected symbol in:
 "print("Incorrect syntax" 
