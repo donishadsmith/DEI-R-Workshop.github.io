@@ -2,7 +2,7 @@
 
 # Lesson 2 - Importing & Exporting Data in R
 
-In this lesson, we will cover how to import and export data with common file extensions `.csv`,`.tsv`, & `.xlsx` into `R`. We will use one of `R`'s most populaular built-in datasets - `iris` as an example. 
+In this lesson, we will cover how to import and export data with common file extensions `.csv`,`.tsv`, & `.xlsx` into `R`. We will use one of `R`'s most populaular built-in datasets (`iris`) as an example. 
 
 ## Importing Data
 
