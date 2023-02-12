@@ -1,6 +1,7 @@
 # Index
 
 # Lesson 2 - Importing & Exporting Data in R
+
 In this lesson, we will cover how to import and export data with common file extensions `.csv`,`.tsv`, & `.xlsx` into R.
 
 ## Importing Data
@@ -99,7 +100,7 @@ write.table(x = "C:/Users/Documents/iris.tsv", sep = "\t")
 
 R does not have a built-in function to export Excel files. A good package to use is `xlsx`. This package requires [Java](https://www.java.com/en/download/) to be installed on your machine to work
 
-```{r}
+```R
 install.packages("xlsx")
 library(xlsx)
 
