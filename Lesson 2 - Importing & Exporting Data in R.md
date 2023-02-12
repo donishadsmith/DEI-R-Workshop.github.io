@@ -85,7 +85,7 @@ install.packages("readxl") # Package that has functions to read excel data into 
 ----
 To use the functions in a package, you can either:
 
-- Load it into `R`'s search path using `library()`
+- Load it into the `R`'s search path using `library()` to access the functions.
 
 ----
 **R Code:**
