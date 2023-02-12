@@ -45,7 +45,8 @@ getwd()
 #Importing from absolute path location
 data <- read.csv(file = "C:/Users/Documents/iris.csv", header = T, sep = ",")
 
-#If your file is located in your current working directory, you can simply use the name of your file. This would be the relative path location of your file.
+#If your file is located in your current working directory, you can simply use the name of your file. 
+#This would be the relative path location of your file.
 data <- read.csv(file = "iris.csv", header = T, sep = ",")
 ```
 ----
