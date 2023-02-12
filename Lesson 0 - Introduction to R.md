@@ -61,6 +61,6 @@ print("My name is _")
 RStudio is an integrated development environment(IDE), which is a graphical user interface(GUI) that makes `R` easier to use.
 
 
-Next Topics:
 
-Lesson 1 -  Basic Data Types & Structures[Lesson 1 -  Basic Data Types & Structures]
+
+[Next Topic: Lesson 1 -  Basic Data Types & Structures](https://github.com/donishadsmith/FIU-DEI-R-Workshop/blob/main/Lesson%201%20-%20%20Basic%20Data%20Types%20%26%20Structures.md)
