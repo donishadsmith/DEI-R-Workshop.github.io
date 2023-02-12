@@ -26,7 +26,7 @@ print("Hello World!")
 print("Incorrect syntax" 
 print("My name is _") 
 ```
-<details><summary>Output:</summary>
+**Output:**
 <p>
 
 ```
@@ -37,7 +37,7 @@ print("My name is _")
 ```
 
 </p>
-</details>
+
 
 ## What is R Studio
 
