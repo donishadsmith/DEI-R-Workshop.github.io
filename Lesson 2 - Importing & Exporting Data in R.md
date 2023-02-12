@@ -22,18 +22,18 @@ Note: Each argument must be separated by a comma.
 
 You can check your current working directory by using `getwd()` if you want to use a relative path to import your data. 
 
-```{r}
+```R
 getwd()
 ```
 You can change your working directory using, `setwd()`
 
-```{r}
+```R
 setwd("C:/Users/Documents/")
 getwd()
 ```
 
 #### Importing a csv file:
-```{r}
+```R
 #Importing from absolute path location
 data <- read.csv(file = "C:/Users/Documents/iris.csv", header = T, sep = ",")
 
@@ -43,7 +43,7 @@ data <- read.csv(file = "iris.csv", header = T, sep = ",")
 
 
 #### Importing a tsv file:
-```{r}
+```R
 data <- read.table(file = "C:/Users/Documents/iris.tsv", header = T, sep = "\t")
 ```
 
@@ -53,7 +53,7 @@ R does not have a built-in function to read Excel files.
 
 In R, you can download and install packages that will allow you to use additional useful functions, using the install.packages().The `install.packages()` function has a `repos =` argument to specify the download location of the package you wish to install. This argument automatically defaults to downloading packages from Comprehensive R Archive Network (CRAN) (`repos = "http://cran.us.r-project.org"`), which is the main repository for R packages. The majority of the R packages that you will need will already be on CRAN. 
 
-```{r}
+```R
 #Name of the package must be in quotes
 install.packages("readxl") # Package that has functions to read excel data into R
 ```
@@ -61,16 +61,14 @@ install.packages("readxl") # Package that has functions to read excel data into 
 To use the functions in a package, you can either:
 
 - Load it into `R`'s search path using `library()`
-```{r}
+```R
 #Name of the package should not be in quotes
 library(readxl)
 # The argument to specify your file location `path = `
 data <- read_xlsx(path = "C:/Users/Documents/iris.xlsx")
 ```
-
-
 - Access the contents in a package using the double colon operator(`::`)
-```{r}
+```R
 data <- readxl::read_xlsx(path = "C:/Users/Documents/iris.xlsx")
 ```
 
@@ -87,24 +85,33 @@ The most common arguments that you will use in these functions are:
 - `sep` : Specify what you want the values in you file to be separated by. For `write.csv()`, this argument defaults to `sep = ","` and will ignore any changes to this argument that you attempt make. 
 
 #### Exporting csv file:
-```{r}
+
+----
+**R Code:**
+```R
 write.csv(x = "C:/Users/Documents/iris.csv")
 ```
-
+----
 #### Exporting tsv file:
-```{r}
+
+----
+**R Code:**
+```R
 write.table(x = "C:/Users/Documents/iris.tsv", sep = "\t")
 ```
-
+----
 #### Exporting Excel file
 
+----
 R does not have a built-in function to export Excel files. A good package to use is `xlsx`. This package requires [Java](https://www.java.com/en/download/) to be installed on your machine to work
+----
 
+**R Code:**
 ```R
 install.packages("xlsx")
 library(xlsx)
 
 write.xlsx(x = "C:/Users/Documents/iris.xlsx")
 ```
-
+----
 
