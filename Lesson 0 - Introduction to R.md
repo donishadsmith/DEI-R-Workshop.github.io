@@ -1,4 +1,5 @@
-
+# Index
+- [Lesson 1 -  Basic Data Types & Structures](https://github.com/donishadsmith/FIU-DEI-R-Workshop/blob/main/Lesson%201%20-%20%20Basic%20Data%20Types%20%26%20Structures.md)
 # Lesson 0 - Introduction to R 
 
 In this lesson, we will cover what R and RStudio are.
