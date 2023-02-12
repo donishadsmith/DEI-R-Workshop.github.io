@@ -190,15 +190,15 @@ write.xlsx(x = data, file = "C:/Users/Documents/iris.xlsx")
 ```
 ----
         
-*Note: Sometimes `R` packages may conflict, you can unload a package from `R`'s search path using `detach()`*
+*Note: Sometimes `R` packages may conflict, you can unload a package from `R`'s search path using `detach()`.*
   
 ----
 
 **R Code:**
 ```R
-
+# Deatching packages requires that you add "package:" before the name of the package
 detach("package:readxl")
-  
+#It is now detached from the search path
 search()
 ```
   
