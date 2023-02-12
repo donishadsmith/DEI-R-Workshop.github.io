@@ -3,9 +3,9 @@
 
 ## What is R?
 
-R is a high-level programming language commonly used for data analysis and data visualization. 
+`R` is a high-level programming language commonly used for data analysis and data visualization. 
 
-Additionally, `R` is also an interpreted language. This means that the `R` interpreter reads a line of the program being executed, checks for incorrect syntax that will produce an error, translates R syntax into machine code (0's & 1's) to be executed by the computer, and prints the output of that line before proceeding to the next line. 
+Additionally, `R` is also an interpreted language. This means that the `R` interpreter reads a line of the program being executed, checks for incorrect syntax that will produce an error, translates `R` syntax into machine code (0's & 1's) to be executed by the computer, and prints the output of that line before proceeding to the next line. 
 
 ----
 #### **`R` Code:**
@@ -55,6 +55,6 @@ print("My name is _")
 
 ## What is R Studio
 
-R Studio is an integrated development environment(IDE), which is a graphical user interface(GUI) that makes R easier to use.
+RStudio is an integrated development environment(IDE), which is a graphical user interface(GUI) that makes R easier to use.
 
 
