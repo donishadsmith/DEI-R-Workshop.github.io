@@ -14,7 +14,6 @@ Additionally, R is also an interpreted language. This means that the R interpret
 print("Hello World!") #Interpreter reads and translates this line first
 print("My name is _") #Then the interpreter reads and translates this line next
 ```
-----
 #### **Output:**
 
 <p>
