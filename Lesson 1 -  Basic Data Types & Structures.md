@@ -74,3 +74,5 @@ Variables are objects that can contain a data type, multiple data types, a funct
 #You can assign a variable that has been defined to an undefined variable. If I assign 1 to a variable named my_variable_1, this is a defined variable. I can then assign my_variable_1 to a new variable named my_variable 2. In this case, my_variable_1 and my_variable_2 are objects that contain the numeric data type, 1.
 
 #It is possible to initialize a variable, which means you can create an "empty" variable, so that the interpreter knows that the variable does exist when you call that variable later in your script. There is a syntactically valid way to create these empty variables. 
+
+[Next Topic: Lesson 2 - Importing & Exporting Data in R](https://github.com/donishadsmith/FIU-DEI-R-Workshop/blob/main/Lesson%202%20-%20Importing%20%26%20Exporting%20Data%20in%20R.md)
