@@ -39,7 +39,9 @@ print("Hello World!")
 print("Incorrect syntax" 
 print("My name is _") 
 ```
+----
 **Output:**
+
 <p>
 
 ```
@@ -51,6 +53,7 @@ print("My name is _")
 
 </p>
 
+----
 
 ## What is R Studio
 
