@@ -196,9 +196,10 @@ write.xlsx(x = data, file = "C:/Users/Documents/iris.xlsx")
 
 **R Code:**
 ```R
-  detach("package:readxl")
+
+detach("package:readxl")
   
-  search()
+search()
 ```
   
 **Output:**
