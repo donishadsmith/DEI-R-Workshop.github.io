@@ -25,7 +25,7 @@ print("My name is _") #Then the interpreter reads and translates this line next
 ```
 
 </p>
----
+----
 Because each line is translated and executed one line at a time, if the interpreter detects a syntax error, it will stop executing the program and produce an error. Any code under the line producing the error will not be executed.
 
 ```R
