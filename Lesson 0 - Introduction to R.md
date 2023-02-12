@@ -38,7 +38,6 @@ print("Hello World!")
 print("Incorrect syntax" 
 print("My name is _") 
 ```
-----
 **Output:**
 
 <p>
