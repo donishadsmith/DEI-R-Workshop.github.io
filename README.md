@@ -2,7 +2,7 @@
 
 The objective of this workshop is to introduce basic R programming knowledge and some general programming concepts that can be applied to other programming languages.
 
-# Topics Covered
+## Topics Covered
 
 | Lesson | Topic | Description | Time |
 |----------|----------|----------|----------|
