@@ -190,7 +190,7 @@ write.xlsx(x = data, file = "C:/Users/Documents/iris.xlsx")
 ```
 ----
         
-*Note: Sometimes `R` packages may conflict, you can unload a package from `R`'s search path using `detach()`
+*Note: Sometimes `R` packages may conflict, you can unload a package from `R`'s search path using `detach()`*
   
 ----
 
