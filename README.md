@@ -17,5 +17,5 @@ The objective of this workshop is to introduce basic R programming knowledge and
 
 [RStudio](https://posit.co/download/rstudio-desktop/)
 
-RStudio requires R 3.3.0+. Make sure to download the correct version of `R` for your operating system.
+RStudio requires `R` 3.3.0+. Make sure to download the correct version of `R` for your operating system.
 
