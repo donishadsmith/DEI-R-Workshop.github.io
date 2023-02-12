@@ -1,6 +1,8 @@
 
 # Lesson 0 - Introduction to R 
 
+In this lesson, we will cover what R and RStudio are.
+
 ## What is R?
 
 `R` is a high-level programming language commonly used for data analysis and data visualization. 
