@@ -112,9 +112,9 @@ To save csv files, you can use `write.csv()`, and the save tsv files you can use
 
 The most common arguments that you will use in these functions are:
 
-- `x` : Specify the name of the object (variable) containing the data that you wish to save.
+- `x = ` : Specify the name of the object (variable) containing the data that you wish to save.
 
-- `sep` : Specify what you want the values in you file to be separated by. For `write.csv()`, this argument defaults to `sep = ","` and will ignore any changes to this argument that you attempt make. 
+- `sep = ` : Specify what you want the values in you file to be separated by. For `write.csv()`, this argument defaults to `sep = ","` and will ignore any changes to this argument that you attempt make. 
 
 #### Exporting csv file:
 
