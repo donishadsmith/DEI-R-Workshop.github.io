@@ -5,7 +5,7 @@
 
 R is a high-level programming language commonly used for data analysis and data visualization. 
 
-Additionally, R is also an interpreted language. This means that the R interpreter reads each line of the program. Each line is read and checked to ensure that the rules of the language have been followed, translated into machine code (0's and 1's) to be executed by the computer, and the output is produced.
+Additionally, R is also an interpreted language. This means that the R interpreter reads a line of the program being executed, checks for incorrect syntax that will produce an error, translates R syntax into machine code (0's & 1's) to be executed by the computer, and prints the output of that line before proceeding to the next line. 
 
 ```R
 # In R, comments are created by adding the hashtag before your sentence so that the interpretor knows that they are comments.
