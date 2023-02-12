@@ -5,19 +5,19 @@
 
 R is a high-level programming language commonly used for data analysis and data visualization. 
 
-Additionally, R  is an interpreted language. This means that the R interpretor reads each line of the program. Each line is read and checked to ensure that the rules of the language have been followed, translated into machine code (0's and 1's) to be executed by the computer, and the output is produced.
+Additionally, R  is an interpreted language. This means that the R interpreter reads each line of the program. Each line is read and checked to ensure that the rules of the language have been followed, translated into machine code (0's and 1's) to be executed by the computer, and the output is produced.
 
 ```R
-# In R, comments are created by adding the hastag before your sentence so that the interpretor knows that they are comments.
-print("Hello World!") #Interpretor reads and translates this line first
-print("My name is _") #Then the interpretor reads and translates this line next
+# In R, comments are created by adding the hashtag before your sentence so that the interpretor knows that they are comments.
+print("Hello World!") #Interpreter reads and translates this line first
+print("My name is _") #Then the interpreter reads and translates this line next
 ```
 Output:
 ```R
 [1] "Hello World!"
 [1] "My name is _"
 ```
-Because each line is translated and executed one line at a time, if the interpretor detects a syntax error, it will stop executing the program and produce an error. Any code under the line producing the error will not be executed.
+Because each line is translated and executed one line at a time, if the interpreter detects a syntax error, it will stop executing the program and produce an error. Any code under the line producing the error will not be executed.
 
 ```R
 print("Hello World!") 
