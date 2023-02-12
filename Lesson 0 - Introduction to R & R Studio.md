@@ -12,7 +12,7 @@ Additionally, R  is an interpreted language. This means that the R interpreter r
 print("Hello World!") #Interpreter reads and translates this line first
 print("My name is _") #Then the interpreter reads and translates this line next
 ```
-<details><summary>*Output:*</summary>
+<details><summary>Output:</summary>
 <p>
 
 ```
@@ -31,13 +31,18 @@ print("Hello World!")
 print("Incorrect syntax" 
 print("My name is _") 
 ```
+<details><summary>Output:</summary>
+<p>
 
 ```
-[1] "Hello World!"
-Error: unexpected symbol in:
-"print("Incorrect syntax" 
-print"
+   [1] "Hello World!"
+   Error: unexpected symbol in:
+   "print("Incorrect syntax" 
+   print"
 ```
+
+</p>
+</details>
 
 ## What is R Studio
 
