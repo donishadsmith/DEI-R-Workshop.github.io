@@ -31,9 +31,11 @@ getwd()
 
 <p>
   
+   
   ```
   [1] "C:/Users/Documents/R MarkDown Files"
   ``` 
+  
 <p>
 
 ----
@@ -50,6 +52,7 @@ getwd()
 **Output:**
   
 <p>
+  
   
   ```
   [1] "C:/Users/Documents"  
@@ -118,6 +121,7 @@ search()
 **Output:**
   
 <p>
+  
   
   ```
   [1] ".GlobalEnv"        "package:readxl"    "tools:rstudio"    
@@ -201,13 +205,14 @@ write.xlsx(x = data, file = "C:/Users/Documents/iris.xlsx")
   
 <p>
   
-    ```
-    [1] ".GlobalEnv"        "tools:rstudio"     "package:stats"    
-    [4] "package:graphics"  "package:grDevices" "package:utils"    
-    [7] "package:datasets"  "package:methods"   "Autoloads"        
-    [10] "package:base" 
   
-    ```
+  ```
+  [1] ".GlobalEnv"        "tools:rstudio"     "package:stats"    
+  [4] "package:graphics"  "package:grDevices" "package:utils"    
+  [7] "package:datasets"  "package:methods"   "Autoloads"        
+  [10] "package:base"   
+  
+  ```
  
 <p> 
  
