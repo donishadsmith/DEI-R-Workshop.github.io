@@ -121,7 +121,7 @@ write.csv(x = "C:/Users/Documents/iris.csv")
 write.table(x = "C:/Users/Documents/iris.tsv", sep = "\t")
 ```
 ----
-#### Exporting Excel file
+#### Exporting Excel file:
 
 ----
 R does not have a built-in function to export Excel files. A good package to use is `xlsx`. This package requires [Java](https://www.java.com/en/download/) to be installed on your machine to work
