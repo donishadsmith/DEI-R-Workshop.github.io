@@ -103,8 +103,8 @@ install.packages("readxl")
 ----
 To use the functions in a package, you can either:
 
-- Load it into the `R`'s search path using `library()`.
-
+- Load it into `R`'s search path (a list of directories where `R` searches for packages and files) using `library()`. The `library()` function adds the package directory into the search path so the contents within the package can be accessed.
+        
 ----
 **R Code:**
 ```R
