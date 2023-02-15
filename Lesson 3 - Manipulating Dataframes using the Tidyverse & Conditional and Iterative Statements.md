@@ -81,7 +81,15 @@ Using the `mutate()` function you can create a simultaneously assign a transform
 data <- data %>% mutate(Sepal.Length_Log = log(Sepal.Length))
 
 data <- data %>% mutate(Sepal.Length = scale(Sepal.Length))
+  
+head(data)
 ```
+#### **Output:**
+
+![Screenshot (31)](https://user-images.githubusercontent.com/112973674/219188302-7c00ddaf-3518-4473-8a4e-a7e698fe0fd7.png)
+
+
+
 ----
 
 ### Summarising
