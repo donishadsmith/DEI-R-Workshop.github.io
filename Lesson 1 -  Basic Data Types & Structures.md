@@ -18,6 +18,8 @@ Variables are objects that can store data. Data is assigned to a variable via an
 
 *Note: The first character of a variable needs to start with a letter `a-z`or `A-Z`. In R, the symbols that variables can contain are the underscore (`_`) and the period (`.`).*
 
+----
+**R Code:**
 ```R
 #Note how the result of each operation is stored in the variable
 addition = 1 + 1
@@ -35,8 +37,24 @@ division
 modulus
 exponentiate 
 ```
+**Output:***
 
-Variables also adapt the properties of a datatype. To demonstrate this, we will use one of `R`'s base functions `class()`, which will tell you the class a data type belongs to. `R` like any other programming languages includes base functions that are automatically available once the `R` console is open. Functions are blocks of code that are assigned to a variable and take on the form `function_name()`. The open parenthesis are due to functions accepting an input, argument, to perform an operation on and produce an output. If you want to see the arguments that a function contains, you can use `?function_name` or `?function_name()` (ex. `?class` or `?class()`). You will be presented with a documentation page informing you of all the parameters the function has.
+<p>
+  
+  ```
+  [1] 2
+  [1] 1
+  [1] 8
+  [1] 10
+  [1] 1
+  [1] 8
+  ```
+  
+<p>
+
+----
+
+Variables also adapt the properties of a datatype. To demonstrate this, we will use one of `R`'s base functions `class()`, which will tell you the class a data type belongs to. `R` like any other programming languages includes base functions that are automatically available once the `R` console is open. Functions are blocks of code that are assigned to a variable and take on the form `function_name()`. The open parenthesis are due to functions accepting an input/argument, to perform an operation on and produce an output. If you want to see the arguments that a function contains, you can use `?function_name` or `?function_name()` (ex. `?class` or `?class()`). You will be presented with a documentation page informing you of all the parameters the function has.
 
 ```R
 #This variable stored the output of a mathematical expression between two numeric data types. 
@@ -52,6 +70,9 @@ addition <- addition + 2
 #### What's the difference between the assignment operators?
 Unlike the equal sign operator (`=`), the single arrow head operator (`<-`) can assign variables inside functions.
 
+----
+**R Code:**
+
 ```R
 print(variable_1 <- "This sentence will print.")
 print(variable_2 = "This sentence won't print.")
@@ -65,13 +86,16 @@ R has a few data types, some of the most commonly used ones are
 
 -vectors: one-dimensional object created using the `c()` function, where each data type is separated by a comma. In `R` vectors must be homogeneous (have the same data type). If a vector has different data types, `R` will try to coerce the entire vector to be the same. For instance, if a vector has a character data type and a numeric data type, `R` will turn the numeric data type into a character.
 
--lists: one-dimensional objects created using the `list()` function. In `R` lists can be heterogeneous (contain different data types).
+- lists: one-dimensional objects created using the `list()` function. In `R` lists can be heterogeneous (contain different data types).
 
--matrix - two-dimensional objects created using the `matrix()` function. 
+- matrix: two-dimensional objects created using the `matrix()` function. 
 
--dataframe - two-dimensional objects created using the `data.frame()` function.
+- dataframe; two-dimensional objects created using the `data.frame()` function.
 
--arrays - three-dimensional objects created using `array()`. Arrays will not be covered in this workshop.
+- arrays: three-dimensional objects created using `array()`. Arrays will not be covered in this workshop.
+
+----
+**R Code:**
 
 ```R
 #Note how the `TRUE` turns into 1 for the vector but not the list
@@ -91,6 +115,8 @@ my_dataframe
 
 ```
 
+----
+**R Code:**
 
 ```R
 #`class()` will tell you the data structure a variable is too.
