@@ -26,7 +26,7 @@ Logical expressions returns a `TRUE` or `FALSE` value. Logical expressions are m
 
 - `%in%`: Evaluates if the object to the left of the operator is inside the object to the right of the operator. Often used to assess of an object is in a list, vector, etc.
 
-**All of these operators will return a `TRUE` or `FALSE` value**
+**All of these operators will return a `TRUE` or `FALSE` value.**
 
 ----
 #### **R Code:**
@@ -53,6 +53,8 @@ Logical expressions returns a `TRUE` or `FALSE` value. Logical expressions are m
   
 ----
 
+#### **R Code:**
+  
 ```R
 TRUE == FALSE
 
@@ -64,9 +66,22 @@ TRUE == FALSE
 c(1,2,3) == c(1,2,5)
 
 ```
+#### **Output:**
 
+<p>
+  
+```
+  [1] FALSE
+  [1] FALSE
+  [1] TRUE
+  [1]  TRUE  TRUE FALSE
+```
+<p>
+  
+----
 
-
+#### **R Code:**
+  
 ```R
 5 != 2
 
@@ -74,18 +89,42 @@ c(1,2,3) == c(1,2,5)
 
 ```
 
+#### **Output:**
 
+<p>
+  
+```
+  [1] TRUE
+  [1] FALSE
+```
+<p>
+  
+----
+  
 *Note: how the logical values returned are reversed.*
 
+----
 
+#### **R Code:**
 ```R
 !(5 != 2 )
 
 !(5 !=5 )
 ```
+#### **Output:**
+
+<p>
+  
+```
+  [1] FALSE
+  [1] TRUE
+```
+<p>
+  
+----
 
 
-
+#### **R Code:**
 ```R
 5 %in% c(1:5)
 
@@ -94,8 +133,21 @@ c(1,2,3) == c(1,2,5)
 FALSE %in% c(TRUE,1,1)
 
 ```
+#### **Output:**
 
+<p>
+  
+```
+  [1] TRUE
+  [1] TRUE
+  [1] FALSE
+```
+<p>
+  
+----
 
+#### **R Code:**
+  
 
 ```R
 #Adding c() can turn c(1,2,3) == c(1,2,5) into a logical vector, which can be evaluated to return a single `TRUE` or `FALSE` value.
@@ -106,13 +158,26 @@ a <- c(1,2,3) == c(1,2,5)
 
 class(a)
 
-#print `a`, you don't have to use `print()`
+#print `a`, you do not have to use `print()`
 a
 
 FALSE %in% c(c(1,2,3) == c(1,2,5)) 
 FALSE %in% a
 ```
+#### **Output:**
 
+<p>
+  
+```
+  [1] "logical"
+  [1]  TRUE  TRUE FALSE
+  [1] TRUE
+  [1] TRUE
+```
+<p>
+  
+----
+  
 
 ## Evaluating multiple logical expressions
 
@@ -120,7 +185,9 @@ There are two base `R` functions that can be used to evaluate multiple logical e
 
 - `any()`: If any of the logical statements in the vector returns TRUE, then this function will return TRUE for the entire vector.`any()` will only return `FALSE` if all logical statements in the vector are `FALSE`.
 
-
+----
+#### **R Code:**
+  
 ```R
 c(3 > 2,5 < 5, 1 %in% c(0:5))
 #Despite one statement returning `FALSE`, `any()` returns `TRUE`
@@ -129,7 +196,8 @@ any(3 > 2,5 < 5, 1 %in% c(0:5))
 ```
 
 
-
+----
+#### **R Code:**
 ```R
 a <- c(3 < 2,5 < 5, 1 %in% c(2:5))
 a
@@ -137,7 +205,8 @@ any(a)
 ```
 
 
-
+----
+#### **R Code:**
 ```R
 c(3 > 2,5 == 5, 1 %in% c(1:5))
 
@@ -146,7 +215,8 @@ any(c(3 > 2,5 == 5, 1 %in% c(1:5)))
 
 - `all()`: Evaluates a logical vector and returns `TRUE` if **ALL** logical expressions in the vector returns `TRUE`.
 
-
+----
+#### **R Code:**
 ```R
 #No expression returns `TRUE` so `all()` returns `FALSE`
 a <- c(1 > 2, 5 < 5, "b" == c("v","n"))
@@ -157,7 +227,8 @@ all(a)
 ```
 
 
-
+----
+#### **R Code:**
 ```R
 #All expressions returns `TRUE` so `all()` returns `TRUE`
 
@@ -170,7 +241,8 @@ all(a)
 ```
 
 
-
+----
+#### **R Code:**
 ```R
 a <- c(1 < 2, 5 != 5, TRUE != FALSE)
 
@@ -180,6 +252,9 @@ all(a)
 ```
 
 - `&` : logical AND evaluates if two or more statements are TRUE, Like `all()` it will only return `TRUE` if all logical expressions return `TRUE`. Can also be used for indexing.
+             
+----
+#### **R Code:**            
 ```R
 
 4 < 6 & 5 == 5 & 7 > 6
@@ -194,7 +269,8 @@ my_vector[my_vector > 1 & my_vector < 6]
 
 - `|` : logical AND evaluates if two or more statements are TRUE, Like `any()` it will return `TRUE` if any logical expressions return `TRUE`. Can also be used for indexing.
 
-
+----
+#### **R Code:**
 ```R
 4 < 6 | 5 == 5 | 7 > 6
 4 < 6 | 5 != 5 | 7 > 6
@@ -221,6 +297,8 @@ if(logical expression){
 }
 ```
 
+----
+#### **R Code:**                       
 ```R
 if(TRUE){
   print("When the expression is TRUE, this block is executed.")
@@ -237,6 +315,8 @@ if(FALSE){
 There may be instances, when you want to evaluate multiple expressions to activate a code block. For instance, you may want to know is  However, conditional statements only work if a single logical value (`TRUE` or `FALSE`) is returned. 
 
 
+----
+#### **R Code:**                       
 ```R
 if(c(TRUE,TRUE,TRUE)){
   print("This will produce an error.")
@@ -245,6 +325,8 @@ if(c(TRUE,TRUE,TRUE)){
 
 This is where `any()` and `all()` come in.
 
+----
+#### **R Code:**                       
 ```R
 a <- c(TRUE,TRUE,TRUE)
 
@@ -258,7 +340,8 @@ if(all(a)){
 ```
 
 
-
+----
+#### **R Code:**
 ```R
 x <- 5
 
@@ -293,6 +376,8 @@ if(expression){
 }
 ```
 
+----
+#### **R Code:**  
 ```R
 a <- 10
 b <- 20
@@ -324,6 +409,8 @@ if(expression){
 }
 ```
 
+----
+#### **R Code:**  
 ```R
 a <- 10
 b <- 10
@@ -337,7 +424,8 @@ if(a > b){
 ```
 
 
-
+----
+#### **R Code:**
 ```R
 a <- 10
 b <- 20
@@ -374,7 +462,8 @@ for(iteration variable in vector){
 ```
 The iteration variable is a random variable that you choose. It is used to keep track of the current iteration of the loop, and its value changes with each iteration.
 
-
+----
+#### **R Code:**
 ```R
 a <- 1:10
 for(i in a){
@@ -383,7 +472,8 @@ for(i in a){
 }
 ```
 
-
+----
+#### **R Code:**
 ```R
 a <- c("a","b","c")
 for(letter in a){
@@ -403,6 +493,8 @@ while(logical expression){
 }
 ```
 
+----
+#### **R Code:**    
 ```R
 #Note how it stopped repeating once count < 6 returned as FALSE
 count <- 1
