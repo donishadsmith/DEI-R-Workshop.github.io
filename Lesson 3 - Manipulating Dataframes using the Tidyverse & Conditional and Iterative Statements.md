@@ -201,7 +201,7 @@ Iterative statements (loops) are used to execute the same block of code several 
 
 There are two common iterative statements:
 
--`for()`: iterates over (loops through) multiple values in a vector, list, etc, and executes a block of code. 
+- `for()`: iterates over (loops through) multiple values in a vector, list, etc, and executes a block of code. 
 
 General structure:
 
@@ -214,7 +214,7 @@ for(iteration variable in vector){
 The **iteration variable** is a random variable that you choose. It is used to keep track of the current iteration of the loop, and its value changes with each iteration.
 
 
--`while(){}`: repeatedly executes a block of code as long as a certain condition is met. You can think of it as combining the evaluative aspect of an `if` statement and the repetitive/looping aspect of a `for` statement. If the logical expression returns TRUE, the block of code will keep executing. The looping stops when the logical expression returns `FALSE`.
+- `while(){}`: repeatedly executes a block of code as long as a certain condition is met. You can think of it as combining the evaluative aspect of an `if` statement and the repetitive/looping aspect of a `for` statement. If the logical expression returns TRUE, the block of code will keep executing. The looping stops when the logical expression returns `FALSE`.
 
 General structure:
 
