@@ -60,7 +60,7 @@ print("My name is _")
 
 ----
 
-## What is R Studio?
+## What is RStudio?
 
 RStudio is an integrated development environment(IDE), which is a graphical user interface(GUI) that makes `R` easier to use.
 
