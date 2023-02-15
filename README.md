@@ -11,7 +11,7 @@ The objective of this workshop is to introduce basic `R` programming knowledge a
 | 2 | [Importing & Exporting Data in R](https://github.com/donishadsmith/FIU-DEI-R-Workshop/blob/main/Lesson%202%20-%20Importing%20&%20Exporting%20Data%20in%20R.md) | A demonstration on how to import and export data into `R`, including how to read and write common file types such as csv, tsv, and xlsx.| 
 | 3 | [Manipulating Dataframes using the Tidyverse & Conditional and Iterative Statements](https://github.com/donishadsmith/FIU-DEI-R-Workshop/blob/main/Lesson%203%20-%20Manipulating%20Dataframes%20using%20the%20Tidyverse%20%26%20Conditional%20and%20Iterative%20Statements.md) | A demonstration of how to sort, filter, and manipulate dataframes using conditional & iterative statements and functions from popular packages in the Tidysverse (such as tidyr & dplyr) to prepare data for analysis and plotting. | 
 | 3.1 | [Conditional & Iterative Statements](https://github.com/donishadsmith/FIU-DEI-R-Workshop/blob/main/Lesson%203.1%20-%20Conditional%20%26%20Iterative%20Statements.md) | An additional lesson that expands on logical expressions, conditional statements, and iterative statements in `R`. | 
-| 4 | Basic Data Analysis & Data Visualisation | A demonstration of how to perform basic data analysis such as anova and regression, and basic plotting in `R`. |
+| 4 | [Basic Data Analysis & Data Visualisation](https://github.com/donishadsmith/FIU-DEI-R-Workshop/blob/main/Lesson%204%20-%20Basic%20Data%20Analysis%20%26%20Data%20Visualization.md) | A demonstration of how to perform basic data analysis such as anova and regression, and basic plotting in `R`. |
 
 ## Installation
 [R](https://cran.rstudio.com/)
