@@ -74,7 +74,7 @@ c(1,2,3) == c(1,2,5)
   [1] FALSE
   [1] FALSE
   [1] TRUE
-  [1]  TRUE  TRUE FALSE
+  [1] TRUE  TRUE FALSE
 ```
 <p>
   
@@ -170,7 +170,7 @@ FALSE %in% a
   
 ```
   [1] "logical"
-  [1]  TRUE  TRUE FALSE
+  [1] TRUE  TRUE FALSE
   [1] TRUE
   [1] TRUE
 ```
@@ -195,6 +195,16 @@ any(3 > 2,5 < 5, 1 %in% c(0:5))
 
 ```
 
+#### **Output:**
+
+<p>
+  
+```
+  [1] TRUE FALSE  TRUE
+  [1] TRUE
+```
+<p>
+  
 
 ----
 #### **R Code:**
@@ -203,7 +213,15 @@ a <- c(3 < 2,5 < 5, 1 %in% c(2:5))
 a
 any(a)
 ```
+#### **Output:**
 
+<p>
+  
+```
+  [1] FALSE FALSE FALSE
+  [1] FALSE
+```
+<p>
 
 ----
 #### **R Code:**
@@ -213,6 +231,17 @@ c(3 > 2,5 == 5, 1 %in% c(1:5))
 any(c(3 > 2,5 == 5, 1 %in% c(1:5)))
 ```
 
+#### **Output:**
+
+<p>
+  
+```
+  [1] TRUE TRUE TRUE
+  [1] TRUE
+```
+<p>
+
+----
 - `all()`: Evaluates a logical vector and returns `TRUE` if **ALL** logical expressions in the vector returns `TRUE`.
 
 ----
@@ -225,7 +254,15 @@ a
 
 all(a)
 ```
+#### **Output:**
 
+<p>
+  
+```
+  [1] FALSE FALSE FALSE FALSE
+  [1] FALSE
+```
+<p>
 
 ----
 #### **R Code:**
@@ -239,6 +276,15 @@ a
 all(a)
 
 ```
+#### **Output:**
+
+<p>
+  
+```
+  [1] TRUE TRUE TRUE
+  [1] TRUE
+```
+<p>
 
 
 ----
@@ -250,6 +296,15 @@ a
 
 all(a)
 ```
+#### **Output:**
+
+<p>
+  
+```
+  [1] TRUE FALSE  TRUE
+  [1] FALSE
+```
+<p>
 
 - `&` : logical AND evaluates if two or more statements are TRUE, Like `all()` it will only return `TRUE` if all logical expressions return `TRUE`. Can also be used for indexing.
              
@@ -265,8 +320,18 @@ my_vector  <- 1:10
 my_vector[my_vector > 1 & my_vector < 6]
 
 ```
+#### **Output:**
 
-
+<p>
+  
+```
+  [1] TRUE
+  [1] FALSE
+  [1] 2 3 4 5
+```
+<p>
+----
+  
 - `|` : logical AND evaluates if two or more statements are TRUE, Like `any()` it will return `TRUE` if any logical expressions return `TRUE`. Can also be used for indexing.
 
 ----
@@ -278,8 +343,20 @@ my_vector[my_vector > 1 & my_vector < 6]
 my_vector[my_vector <= 3 | my_vector == 6]
 ```
 
+#### **Output:**
 
-##Conditional Statements
+<p>
+  
+```
+  [1] TRUE
+  [1] TRUE
+  [1] 1 2 3 6
+```
+<p>
+  
+----
+  
+## Conditional Statements
 
 Conditional Statements (if-else statements) execute a block of code when a certain condition, specified by the user, has been met.
 
@@ -311,7 +388,17 @@ if(FALSE){
 }
 ```
 
+#### **Output:**
 
+<p>
+  
+```
+  [1] "When the expression is TRUE, this block is executed."
+```
+<p>
+  
+----
+  
 There may be instances, when you want to evaluate multiple expressions to activate a code block. For instance, you may want to know is  However, conditional statements only work if a single logical value (`TRUE` or `FALSE`) is returned. 
 
 
@@ -325,7 +412,18 @@ if(c(TRUE,TRUE,TRUE)){
 
 This is where `any()` and `all()` come in.
 
+  
+#### **Output:**
+
+<p>
+  
+```
+  Error in if (c(TRUE, TRUE, TRUE)) { : the condition has length > 1
+```
+<p>
+  
 ----
+  
 #### **R Code:**                       
 ```R
 a <- c(TRUE,TRUE,TRUE)
@@ -339,7 +437,16 @@ if(all(a)){
 }
 ```
 
+#### **Output:**
 
+<p>
+  
+```
+  [1] "When the expression is TRUE, this block is executed."
+  [1] "When the expression is TRUE, this block is executed."
+```
+<p>
+  
 ----
 #### **R Code:**
 ```R
@@ -360,7 +467,19 @@ if(all(y)){
   print("This statement returns TRUE and will be printed.")
 }
 ```
+#### **Output:**
 
+<p>
+  
+```
+  [1] "This statement returns TRUE and will be printed."
+  [1] "This statement returns TRUE and will be printed."
+  [1] "This statement returns TRUE and will be printed."  
+```
+<p>
+
+----
+  
 ### Else statements
 
 `else{}` statements do not evaluate expressions, they are only used to activate an alternative block of code if the `if()` statement above it returns `FALSE`. Since they do not accept an expression, not hoe `else{}` is followed by curly braces instead of parenthesis and curly braces.
@@ -392,7 +511,17 @@ if(a  >  b){
 
   
 ```
+#### **Output:**
 
+<p>
+  
+```
+  [1] "10 IS NOT greater than 20"
+```
+<p>
+
+----
+  
 ### Else statements
 
 
@@ -423,6 +552,15 @@ if(a > b){
   } 
 ```
 
+#### **Output:**
+
+<p>
+  
+```
+  [1] "10 EQUALS than 10"
+```
+<p>
+
 
 ----
 #### **R Code:**
@@ -438,7 +576,16 @@ if(a > b){
       sprintf("%s IS NOT greater than %s",a,b)
   }
 ```
+#### **Output:**
 
+<p>
+  
+```
+  [1] "10 IS NOT greater than 20"
+```
+<p>
+
+----
 
 
 *Note: In these examples, only a single line of code was used; however, you can write multiple lines of code under each conditional statement.*
@@ -471,6 +618,24 @@ for(i in a){
   print(b)
 }
 ```
+#### **Output:**
+
+<p>
+  
+```
+  [1] 2
+  [1] 3
+  [1] 4
+  [1] 5
+  [1] 6
+  [1] 7
+  [1] 8
+  [1] 9
+  [1] 10
+  [1] 11
+```
+<p>
+
 
 ----
 #### **R Code:**
@@ -480,7 +645,19 @@ for(letter in a){
   print(letter)
 }
 ```
+#### **Output:**
 
+<p>
+  
+```
+  [1] "a"
+  [1] "b"
+  [1] "c"
+```
+<p>
+
+
+----
 
 -`while(){}`: repeatedly executes a block of code as long as a certain condition is met. You can think of it as combining the evaluative aspect of an `if` statement and the repetitive/looping aspect of a `for` statement. If the logical expression returns TRUE, the block of code will keep executing. The looping stops when the logical expression returns `FALSE`.
 
@@ -506,7 +683,22 @@ while(count < 6){
   print(count)
 }
 ```
+#### **Output:**
 
+<p>
+  
+```
+  [1] 2
+  [1] 3
+  [1] 4
+  [1] 5
+  [1] 6
+
+```
+<p>
+
+
+----
 
 
 
