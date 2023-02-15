@@ -43,14 +43,11 @@ head(data)
 ```
 
 #### **Output:**
-![Screenshot (30)](https://user-images.githubusercontent.com/112973674/219183937-14ae93a4-2367-4edb-b4e2-9425afb33996.png)
-<p>
 
-```
- ![Screenshot (30)](https://user-images.githubusercontent.com/112973674/219183937-14ae93a4-2367-4edb-b4e2-9425afb33996.png)
- 
-```
-  
+
+<p>
+  ![Screenshot (30)](https://user-images.githubusercontent.com/112973674/219183937-14ae93a4-2367-4edb-b4e2-9425afb33996.png)
+<p> 
 ----
 
 When you load in dplyr or tidyr, you have access to a new operator - the pipe operator `%>%`. This operator is useful when you need to pass the outputs of one function into another or chain multiple operations together. `dataframe %>% ` allows you to use column names from your dataframe in the next operation or allows you to filter contents in a dataframe. Think of the pipe operator as an assembly line that gives the output of its task to the next person in line.
