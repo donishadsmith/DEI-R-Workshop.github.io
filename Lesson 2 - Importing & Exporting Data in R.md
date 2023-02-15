@@ -23,11 +23,11 @@ Both functions have multiple arguments; however, some arguments that are most co
 You can check your current working directory by using `getwd()` if you want to use a relative path to import your data. 
 
 ----
-**R Code:**
+#### **R Code:**
 ```R
 getwd()
 ```
-**Output:**
+#### **Output:**
 
 <p>
   
@@ -42,14 +42,14 @@ getwd()
 You can change your working directory using, `setwd()`
 
 ----
-**R Code:**
+#### **R Code:**
 ```R
 setwd("C:/Users/Documents/")
   
 getwd()
 ``` 
   
-**Output:**
+#### **Output:**
   
 <p>
   
@@ -66,7 +66,7 @@ getwd()
 #### Importing a csv file:
 
 ----
-**R Code:**
+#### **R Code:**
 ```R
 #Importing from absolute path location
 data <- read.csv(file = "C:/Users/Documents/iris.csv", header = T, sep = ",")
@@ -80,7 +80,7 @@ data <- read.csv(file = "iris.csv", header = T, sep = ",")
 #### Importing a tsv file:
 
 ----
-**R Code:**
+#### **R Code:**
 ```R
 data <- read.table(file = "C:/Users/Documents/iris.tsv", header = T, sep = "\t")
 ```
@@ -95,7 +95,7 @@ In R, you can download and install packages that will allow you to use additiona
 `readxl` uses the `path =` as the argument to specify your file's location.
   
 ----
-**R Code:**
+#### **R Code:**
 ```R
 #Name of the package must be in quotes
 install.packages("readxl")
@@ -106,7 +106,7 @@ To use the functions in a package, you can either:
 - Load it into `R`'s search path (a list of directories where `R` searches for packages and files) using `library()`. The `library()` function adds the package directory into the search path so the contents within the package can be accessed.
         
 ----
-**R Code:**
+#### **R Code:**
 ```R
 #Name of the package should not be in quotes
 library(readxl)
@@ -117,8 +117,7 @@ data <- read_xlsx(path = "C:/Users/Documents/iris.xlsx")
 #that are automatically loaded in when R is activated
 search()
 ```
-----
-**Output:**
+#### **Output:**
   
 <p>
   
@@ -136,7 +135,7 @@ search()
 - Access the contents in a package using the double colon operator(`::`).
 
 ----
-**R Code:*
+#### **R Code:**
 ```R
 data <- readxl::read_xlsx(path = "C:/Users/Documents/iris.xlsx")
 ```
@@ -158,7 +157,7 @@ The most common arguments that you will use in these functions are:
 #### Exporting csv file:
 
 ----
-**R Code:**
+#### **R Code:**
 ```R
 write.csv(x = "C:/Users/Documents/iris.csv")
 ```
@@ -166,7 +165,7 @@ write.csv(x = "C:/Users/Documents/iris.csv")
 #### Exporting tsv file:
 
 ----
-**R Code:**
+#### **R Code:**
 ```R
 write.table(x = data, file = "C:/Users/Documents/iris.tsv", sep = "\t")
 ```
@@ -180,7 +179,7 @@ R does not have a built-in function to export Excel files. A good package to use
         
 ----
 
-**R Code:**
+#### **R Code:**
 ```R
 install.packages("xlsx")
         
@@ -194,7 +193,7 @@ write.xlsx(x = data, file = "C:/Users/Documents/iris.xlsx")
   
 ----
 
-**R Code:**
+#### **R Code:**
 ```R
 # Deatching packages requires that you add "package:" before the name of the package
 detach("package:readxl")
@@ -202,7 +201,7 @@ detach("package:readxl")
 search()
 ```
   
-**Output:**
+#### **Output:**
   
 <p>
   
