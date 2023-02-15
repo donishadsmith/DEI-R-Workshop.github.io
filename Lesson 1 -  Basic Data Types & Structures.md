@@ -121,7 +121,7 @@ Data structures allow you to store multiple data types into a single variable.
 
 - matrix: two-dimensional objects created using the `matrix()` function. 
 
-- dataframe; two-dimensional objects created using the `data.frame()` function.
+- data frame; two-dimensional objects created using the `data.frame()` function.
 
 - arrays: three-dimensional objects created using `array()`. Arrays will not be covered in this workshop.
 
@@ -218,7 +218,7 @@ my_vector_2
   
 ```
   [1]  0  1  2  3  4  5  6  7  8  9 10
-  [1]   0   1   2   3   4   5   6   7  50  51  52  53  54  55  56  57  58  59
+  [1]  0   1   2   3   4   5   6   7  50  51  52  53  54  55  56  57  58  59
   [19]  60 100
 ```
   
@@ -401,11 +401,11 @@ my_dataframe[c(1:2,3),]
 #### **R Code:**  
 
 ```R
-#Access the first column in my dataframe
+#Access the first column in my data frame
 my_dataframe[,1]
 #Print out the name of my columns using `colnames()`, `names()` also does the same thing but is often used for 1D data.
 colnames(my_dataframe)
-#Access the first column in my dataframe using the column name
+#Access the first column in my data frame using the column name
 my_dataframe$Col_1
 #You can also use the column name in the brackets
 my_dataframe[,"Col_1"]
