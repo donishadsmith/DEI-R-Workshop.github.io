@@ -213,7 +213,7 @@ complete_data <- data %>% complete.cases()
 ----
 In certain cases, such as having a function inside a function `filter(complete.cases(.))`. If you need the output of the previous operation as the input for the outermost and innermost function, you need to add an explicit dot for the input of the inner function because the outermost function already used the implicit dot (`filter(complete.cases(.))` is actually `filter(.,complete.cases(.))` which translates to `filter(data,complete.cases(data))` since the previous operation is just the entire dataframe).
 
-
+----
 ### Selecting columns
 
 ----
@@ -304,8 +304,11 @@ Logical expressions returns a `TRUE` or `FALSE` value. Logical expressions are m
  <p>
  
 ----
-----
+
 ### Conditional Statements
+
+----
+   
 Conditional Statements (if-else statements) execute a block of code when a certain condition, specified by the user, has been met.
 
 The returned `TRUE` or `FALSE` value from a logical expression such as `5 > 2` is used by the the conditional statements to determine if a code block should be run. If the returned value is `TRUE` then the code block will run, if it is `FALSE` the code block will not be ran.
