@@ -28,7 +28,8 @@ Logical expressions returns a `TRUE` or `FALSE` value. Logical expressions are m
 
 **All of these operators will return a `TRUE` or `FALSE` value**
 
-
+----
+#### **R Code:**
 ```R
 5 > 2
 
@@ -38,8 +39,18 @@ Logical expressions returns a `TRUE` or `FALSE` value. Logical expressions are m
 
 5 >= 2
 ```
+#### **Output:**
 
-
+<p>
+  
+```
+  [1] TRUE
+  [1] FALSE
+  [1] FALSE
+  [1] TRUE
+```
+<p>
+----
 
 ```R
 TRUE == FALSE
@@ -102,7 +113,7 @@ FALSE %in% a
 ```
 
 
-##Evaluating multiple logical expressions
+## Evaluating multiple logical expressions
 
 There are two base `R` functions that can be used to evaluate multiple logical expressions. These functions can be used to evaluate a vector of logical expressions. A vector of logical statements will return a vector of logical values; however, there are two useful function and two useful notations to evaluate multiple logical expressions. :
 
