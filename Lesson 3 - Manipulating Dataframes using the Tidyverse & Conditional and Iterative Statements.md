@@ -70,7 +70,7 @@ data %>% colnames()
 
 ----
 
-### Mutating Columns
+### Mutating columns
   
 ----
 Using the `mutate()` function you can create a simultaneously assign a transformed column to a new column while retaining the old column or transform a column and assign the transformed column back to itself (overwriting).
@@ -92,7 +92,7 @@ head(data)
 
 ----
 
-### Summarising Groups
+### Summarising groups
 
 ----
 In some instances, you may need a summary of descriptive statistics of certain groups of participants in your data frame. You can use `group_by()`, which is a function that allows you to perform operations based on groups that are defined by the variables in the column that you are grouping by. Here, we group our data based on species and use some of `R`'s built-in functions for basic descriptive statistics on each species sepal width. Our new data will summarize each species mean (`mean()`), variance (`var()`), standard deviation (`sd()`), max (`max()`), and min (`min()`) sepal width.
@@ -120,10 +120,11 @@ head(summary_data)
 
 ----
 
-### Filtering Rows
+### Filtering rows
 
 ----
 Sometimes you may need to remove particular groups from your data frame in preparation for an analysis. Combining dplyr's `group_by()` and `filter()` can remove or retain particular groups of interest. Here we use the 'not equal to' operator (`!=`) to exclude the setosa species from our data frame and assign this output to a new data frame.
+  
 ----
 #### **R Code:**
 
@@ -184,7 +185,9 @@ nrow(reduced_data)
  ```
    
  <p>
+   
 ----
+   
 #### Complete Cases
 
 ----
@@ -256,6 +259,7 @@ dim(sepal_data)
  ```
    
  <p>
+   
 ----
 
 ## Conditional & Iterative Statements
