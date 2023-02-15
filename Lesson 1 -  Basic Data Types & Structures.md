@@ -407,7 +407,7 @@ my_dataframe[,1]
 colnames(my_dataframe)
 #Access the first column in my dataframe using the column name
 my_dataframe$Col_1
-#You cna also use the column name in the brackets
+#You can also use the column name in the brackets
 my_dataframe[,"Col_1"]
 ```
 #### **Output:**
