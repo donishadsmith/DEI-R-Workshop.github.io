@@ -146,6 +146,7 @@ reduced_data <- data %>% filter(!is.na(Sepal.Length) & !is.na(Sepal.Width))
 ```
 ---- 
 We can use one of `R`'s built-in `factor()` function, which is used to categorical data and use summary `R`'s built-in `summary()` function to summarize the Species column of our old and new data frame. Our new data frame no longer includes the rows associated with the setosa species. 
+
 ----
 #### **R Code:**
 ```R
