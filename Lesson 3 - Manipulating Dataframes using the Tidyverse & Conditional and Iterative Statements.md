@@ -89,13 +89,11 @@ head(data)
 
 ![Screenshot (31)](https://user-images.githubusercontent.com/112973674/219188302-7c00ddaf-3518-4473-8a4e-a7e698fe0fd7.png)
 
-
-
 ----
 
 ### Summarising
 
-`group_by()` 
+In some instances, you may need a summary of descriptive statistics of certain groups of participants in your data frame. You can use `group_by()`, which is a function that allows you to perform operations based on groups that are defined by the variables in the column that you are grouping by. Here, we group our data based on species and use some of `R`'s built-in functions for basic descriptive statistics on each species sepal width. Our new data will summarize each species mean (`mean()`), variance (`var()`), standard deviation (`sd()`), max (`max()`), and min (`min()`) sepal width.
 
 ----
 #### **R Code:**
@@ -103,14 +101,26 @@ head(data)
 # Summarize data
 summary_data <- data %>%
   group_by(Species) %>%
-  summarize(mean = mean(Sepal.Length),
-            max = max(Sepal.Length),
-            min = min(Sepal.Length))
+  summarize(mean = mean(Sepal.Width),
+            variance = var(Sepal.Width),
+            std_dev = sd(Sepal.Width),
+            max = max(Sepal.Width),
+            min = min(Sepal.Width))
+
+head(summary_data)
 ```
+  
+#### **Output:**
+
+![Screenshot (34)](https://user-images.githubusercontent.com/112973674/219195159-54012ea0-cfb9-41cd-8663-372dd3b66e66.png)
+
+
+
 ----
 
 ### Filtering
 
+Sometimes you may need to remove particular groups from your data frame in preparation for an analysis. Combining dplyr's `group_by()` and `filter()` can remove or retain particular groups of interest. Here we use the 'not equal to' operator (`!=`) to exclude the setosa species from our data frame and assign this output to a new data frame.
 ----
 #### **R Code:**
 
@@ -119,6 +129,7 @@ reduced_data <- data %>% group_by(Species) %>% filter(Species != "setosa")
 ```
 
 ----
+Here, we accomplish the same task as above, instead, we use the `%in%` logical operator to retain the names of the species inside of a vector. Any species not inside the vector (setosa) will be excluded.
 #### **R Code:**
 ```R
 reduced_data <- data %>% group_by(Species) %>% 
