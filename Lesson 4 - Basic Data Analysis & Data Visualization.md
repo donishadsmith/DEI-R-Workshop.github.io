@@ -5,3 +5,8 @@
 - [Lesson 3 - Manipulating Dataframes using the Tidyverse & Conditional and Iterative Statements](https://github.com/donishadsmith/FIU-DEI-R-Workshop/blob/main/Lesson%203%20-%20Manipulating%20Dataframes%20using%20the%20Tidyverse%20%26%20Conditional%20and%20Iterative%20Statements.md) 
 - [Lesson 3.1 - Conditional & Iterative Statements](https://github.com/donishadsmith/FIU-DEI-R-Workshop/blob/main/Lesson%203.1%20-%20Conditional%20%26%20Iterative%20Statements.md) 
 # Lesson 4 - Basic Data Analysis & Data Visualization
+
+
+----
+
+[Previous Lesson](https://github.com/donishadsmith/FIU-DEI-R-Workshop/blob/main/Lesson%203.1%20-%20Conditional%20%26%20Iterative%20Statements.md) 
