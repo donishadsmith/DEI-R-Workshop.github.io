@@ -169,23 +169,39 @@ my_dataframe
    [2,]    2    4
   
         Col_1 Col_2 Col3
-   [1]  1     1     4    7
-   [1]  2     2     5    8
-   [1]  3     3     6    9
+   [1]   1     4    7
+   [1]   2     5    8
+   [1]   3     6    9
 ```
   
 <p>
  
 ----
-**R Code:**
+#### **R Code:**
 
 ```R
 #`class()` will tell you the data structure a variable is too.
 class(my_dataframe)
 ```
 
+#### **Output:**
+
+<p>
+  
+```
+  [1] "data.frame"
+```
+  
+<p>
+
+---- 
+  
 In `R` if you want to generate a sequence of numbers for a vector you can use the colon (`:`) operator.
 
+----
+  
+#### **R Code:**
+  
 ```R
 my_vector_1 <- 0:10
 
@@ -196,18 +212,51 @@ my_vector_1
 my_vector_2
 
 ```
+#### **Output:**
+
+<p>
+  
+```
+  [1]  0  1  2  3  4  5  6  7  8  9 10
+  [1]   0   1   2   3   4   5   6   7  50  51  52  53  54  55  56  57  58  59
+  [19]  60 100
+```
+  
+<p>
+
+----
+  
 `R` has built in vectorization where you can perform operations on each element of the vector.
+  
+----
+
+#### **R Code:**
+  
 ```R
-my_vector_1 + 10
 
 new_my_vector_1 <- my_vector_1 * 10
 
 new_my_vector_1
 ```
+#### **Output:**
+
+<p>
+  
+```
+  [1]   0  10  20  30  40  50  60  70  80  90 100
+```
+  
+<p>
+
+----                   
+                                  
 If you need you need to generate a sequence of numbers with certain step sizes, you can use `seq()`, where the first argument is the starting number, the second is the ending number, and the third argument is the step size. 
 
 **The order of the inputs for functions matter.** If you look at the documentation for seq using `?seq()` the first three arguments are from, to, and by (`seq(from, to, by,...)`). So if your inputs are in the correct position, you do not to write the name of the argument. The order of the inputs matter.
 
+----
+#### **R Code:**
+ 
 ```R
 my_vector_3 <- seq(from = 0, to = 10,by = 2)
 
@@ -222,9 +271,25 @@ my_vector_4
 my_vector_5
 
 ```
+#### **Output:**
 
+<p>
+  
+```
+  [1]  0  2  4  6  8 10
+  [1]  0  2  4  6  8 10
+  [1]  0  2  4  6  8 10
+```
+  
+<p>
+
+----
+                             
 If you need to perform matrix multiplication on a vector or matrix, use `%*%`. You may need to `t()` to transpose a matrix for the correct result.
 
+----
+#### **R Code:**
+  
 ```R
 my_vector_1 <- 1:3
 
@@ -238,6 +303,23 @@ matrix_multiplication_2 <- my_vector_1 %*% t(my_vector_2) # 3 by 3 matrix
 
 matrix_multiplication_2
 ```
+#### **Output:**
+
+<p>
+  
+```
+          [,1]
+   [1,]    32
+          [,1] [,2] [,3]
+   [1,]    4    5    6
+   [2,]    8   10   12
+   [3,]   12   15   18
+```
+  
+<p>
+
+----  
+  
 ### Indexing
 
 Indexing is used if you want to access specific values in a data structure. In`R`'s index starts at 1. 
@@ -248,6 +330,9 @@ There are two common ways to access contents inside data structures:
 
 - `$`: Dollar sign operator only indexes with names. Commonly used to access a specific column of a dataframe using the name of that column. You can use `colnames()` to determine the names of your columns, those are the names that must be used with the dollar sign operator.
 
+----
+#### **R Code:**
+  
 ```R
 my_vector
 #Access the second value in my vector
@@ -258,9 +343,26 @@ my_vector[2] <- "a"
 my_vector
 
 ```
+#### **Output:**
 
+<p>
+  
+```
+   [1] 1 2 4 1
+   [1] 2
+   [1] "1" "a" "4" "1"
+```
+  
+<p>
+
+----  
+                  
+                
 For two-dimensional objects such as data frames, a comma is used to separate the dimensions. To access a row, the notation is (assuming the name of your dataframe is `data`) `data[row,]` and to access a column, the notation is `data[,column]` or `data$column_name`.
 
+----
+#### **R Code:**
+  
 ```R
 #Access row 1
 
@@ -274,7 +376,29 @@ my_dataframe[c(1,3),]
 
 my_dataframe[c(1:2,3),]
 ```
+#### **Output:**
 
+<p>
+  
+```
+      Col_1 Col_2 Col3
+   [1]  1     4    7
+  
+       Col_1 Col_2 Col3
+   [1]   1     4    7
+   [1]   3     6    9
+  
+       Col_1 Col_2 Col3
+   [1]   1     4    7
+   [1]   2     5    8
+   [1]   3     6    9
+```
+  
+<p>
+
+----  
+ 
+#### **R Code:**  
 
 ```R
 #Access the first column in my dataframe
@@ -286,6 +410,17 @@ my_dataframe$Col_1
 #You cna also use the column name in the brackets
 my_dataframe[,"Col_1"]
 ```
+#### **Output:**
 
+<p>
+  
+```
+   [1] 1 2 3
+   [1] "Col_1" "Col_2" "Col3" 
+   [1] 1 2 3
+   [1] 1 2 3
+```
+  
+<p>
 ----
 [Next Topic: Lesson 2 - Importing & Exporting Data in R](https://github.com/donishadsmith/FIU-DEI-R-Workshop/blob/main/Lesson%202%20-%20Importing%20%26%20Exporting%20Data%20in%20R.md)
