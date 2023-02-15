@@ -238,7 +238,7 @@ if(logical expression){
   Code 2
 }
 ```
-
+----
 ### Iterative Statements
 
 Iterative statements (loops) are used to execute the same block of code several times. 
