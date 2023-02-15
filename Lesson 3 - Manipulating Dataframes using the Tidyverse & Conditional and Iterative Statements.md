@@ -70,8 +70,9 @@ data %>% colnames()
 
 ----
 
-### Mutate
-
+### Mutating Columns
+  
+----
 Using the `mutate()` function you can create a simultaneously assign a transformed column to a new column while retaining the old column or transform a column and assign the transformed column back to itself (overwriting).
 
 ----
@@ -91,8 +92,9 @@ head(data)
 
 ----
 
-### Summarising
+### Summarising Groups
 
+----
 In some instances, you may need a summary of descriptive statistics of certain groups of participants in your data frame. You can use `group_by()`, which is a function that allows you to perform operations based on groups that are defined by the variables in the column that you are grouping by. Here, we group our data based on species and use some of `R`'s built-in functions for basic descriptive statistics on each species sepal width. Our new data will summarize each species mean (`mean()`), variance (`var()`), standard deviation (`sd()`), max (`max()`), and min (`min()`) sepal width.
 
 ----
@@ -118,8 +120,9 @@ head(summary_data)
 
 ----
 
-### Filtering
+### Filtering Rows
 
+----
 Sometimes you may need to remove particular groups from your data frame in preparation for an analysis. Combining dplyr's `group_by()` and `filter()` can remove or retain particular groups of interest. Here we use the 'not equal to' operator (`!=`) to exclude the setosa species from our data frame and assign this output to a new data frame.
 ----
 #### **R Code:**
@@ -140,8 +143,53 @@ reduced_data <- data %>% group_by(Species) %>%
 ```R
 reduced_data <- data %>% filter(!is.na(Sepal.Length) & !is.na(Sepal.Width)) 
 ```
+---- 
+We can use one of `R`'s built-in `factor()` function, which is used to categorical data and use summary `R`'s built-in `summary()` function to summarize the Species column of our old and new data frame. Our new data frame no longer includes the rows associated with the setosa species. 
+----
+#### **R Code:**
+```R
+#Result of using summary() on a column that is not a factor
+summary(data$Species)
+
+#Factor species in our new and old data frame
+
+data$Species <- factor(data$Species)
+reduced_data$Species <- factor(reduced_data$Species)
+
+#Summary and use nrow() to see the number of rows each data frame has
+summary(data$Species)
+nrow(data)
+summary(reduced_data$Species)
+nrow(reduced_data)
+
+
+```
+ #### **Output:** 
+  
+ <p>
+ 
+ ```
+    Length     Class      Mode 
+      150 character character 
+   
+    setosa versicolor  virginica 
+        50         50         50 
+   
+   [1] 150
+   
+    versicolor  virginica 
+        50         50 
+   
+   [1] 100
+ ```
+   
+ <p>
 ----
 #### Complete Cases
+
+----
+   
+
 Some instances, you may only want complete data, you can use `R`'s built-in `complete.cases()` function to get the participants with complete data.
 
 The `.` is a shortcut to the output of the previous step. In this case, `.` is just `data`. Each function that receives the output from the pipe operator has an implicit dot.
@@ -165,6 +213,7 @@ In certain cases, such as having a function inside a function `filter(complete.c
 ### Selecting columns
 
 ----
+We can use dplyr's `select()` function to select specific columns of a data frame.
 #### **R Code:**
 ```R
 sepal_data <- data %>% select(c("Sepal.Length","Sepal.Width"))
@@ -173,6 +222,18 @@ colnames(sepal_data)
 
 dim(sepal_data)
 ```
+   
+#### **Output:** 
+  
+ <p>
+ 
+ ```
+    [1] "Sepal.Length" "Sepal.Width" 
+    [1] 150   2
+ ```
+   
+ <p>
+ 
 ----
 This code produces the same as above but uses dplyr's `matches()` function to get all column names that have "Sepal" or "sepal" in the name (`matches()` is not case sensitive).
 
@@ -185,6 +246,16 @@ colnames(sepal_data)
 
 dim(sepal_data)
 ```
+ #### **Output:** 
+  
+ <p>
+ 
+ ```
+    [1] "Sepal.Length" "Sepal.Width" 
+    [1] 150   2
+ ```
+   
+ <p>
 ----
 
 ## Conditional & Iterative Statements
