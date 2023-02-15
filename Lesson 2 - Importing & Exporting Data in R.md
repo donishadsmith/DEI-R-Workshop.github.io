@@ -90,7 +90,7 @@ data <- read.table(file = "C:/Users/Documents/iris.tsv", header = T, sep = "\t")
 ----
 R does not have a built-in function to read Excel files. 
 
-In R, you can download and install packages that will allow you to use additional useful functions, using the install.packages().The `install.packages()` function has a `repos =` argument to specify the download location of the package you wish to install. This argument automatically defaults to downloading packages from Comprehensive R Archive Network (CRAN) (`repos = "http://cran.us.r-project.org"`), which is the main repository for R packages. The majority of the R packages that you will need will already be on CRAN. 
+In R, you can download and install packages that will allow you to use additional useful functions, using the install.packages().The `install.packages()` function has a `repos =` argument to specify the download location of the package you wish to install. This argument automatically defaults to downloading packages from Comprehensive R Archive Network (CRAN) (`repos = "http://cran.us.r-project.org"`), which is the main repository for R packages. The majority of the R packages that you will need will already be on CRAN. You can go [here](http://lib.stat.cmu.edu/R/CRAN/) if you wish to see all of the packages on CRAN with descriptions of what those packages are for. Simply use `Ctrl + F` to find paclkages with certain keywords in their descriptions.
 
 `readxl` uses the `path =` as the argument to specify your file's location.
   
