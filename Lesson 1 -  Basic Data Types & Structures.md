@@ -1,79 +1,204 @@
 # Lesson 1 -  Basic Data Types & Structures
 
-In this lesson, we will cover some 
+Data types are essentially classifications/grouping of data values that only permit certain operations to be performed on it.
 
-`R` has several data types.
+R has several basic data types classes.
 
-The most common types are:
+Some common classes of data types includes:
 
-Numeric: 
+- Character: Anything inside a single (`''`) or double (`""`) quotes. The contents Within the string are irrelevant (ex. `'a'`,`"..2567, TRUE"`).
+-Numeric: Any real number or rational numbers (ex. `4`, `9.01`)
+-Integer: Whole numbers that include the `L` notation after it (ex. `4L`,`3L`);
+-Logical: `TRUE` and `FALSE`
+-Complex: Numbers with a real and imaginary part (ex. `2i`, `4i`). The imaginary part uses the `i` notation.
 
-----
-#### **R Code:**
+## Variables and Basic Arithmatic
+
+Variables are objects that can store data. Data is assigned to a variable via an assignment operator. R has two standard assignment operator: the equal sign (`=`) and the single headed arrow (`<-`).
+
+*Note: The first character of a variable needs to start with a letter `a-z`or `A-Z`. In R, the symbols that variables can contain are the underscore (`_`) and the period (`.`).*
+
 ```R
-# In R, comments are created by adding the hashtag before your sentence so that the interpretor knows that they are comments.
-print("Hello World!") #Interpreter reads and translates this line first
-print("My name is _") #Then the interpreter reads and translates this line next
+#Note how the result of each operation is stored in the variable
+addition = 1 + 1
+subtraction <- 2 - 1  
+multiplication = 4 * 2
+division <- 20/2
+modulus = 5 %% 2
+exponentiate <- 2^3
+
+#Showing the results of these operations
+addition
+subtraction
+multiplication
+division
+modulus
+exponentiate 
 ```
-#### **Output:**
 
-<p>
-   
+Variables also adapt the properties of a datatype. To demonstrate this, we will use one of `R`'s base functions `class()`, which will tell you the class a data type belongs to. `R` like any other programming languages includes base functions that are automatically available once the `R` console is open. Functions are blocks of code that are assigned to a variable and take on the form `function_name()`. The open parenthesis are due to functions accepting an input, argument, to perform an operation on and produce an output. If you want to see the arguments that a function contains, you can use `?function_name` or `?function_name()` (ex. `?class` or `?class()`). You will be presented with a documentation page informing you of all the parameters the function has.
+
+```R
+#This variable stored the output of a mathematical expression between two numeric data types. 
+
+addition
+
+class(addition)
+
+#Variable used for addition
+addition <- addition + 2
 ```
-   [1] "Hello World!"
-   [1] "My name is _"
+
+#### What's the difference between the assignment operators?
+Unlike the equal sign operator (`=`), the single arrow head operator (`<-`) can assign variables inside functions.
+
+```R
+print(variable_1 <- "This sentence will print.")
+print(variable_2 = "This sentence won't print.")
 ```
-   
-</p>
 
-----
+##Data Structures
+
+Data structures allow you to store multiple data types into a single variable. 
+
+R has a few data types, some of the most commonly used ones are 
+
+-vectors: one-dimensional object created using the `c()` function, where each data type is separated by a comma. In `R` vectors must be homogeneous (have the same data type). If a vector has different data types, `R` will try to coerce the entire vector to be the same. For instance, if a vector has a character data type and a numeric data type, `R` will turn the numeric data type into a character.
+
+-lists: one-dimensional objects created using the `list()` function. In `R` lists can be heterogeneous (contain different data types).
+
+-matrix - two-dimensional objects created using the `matrix()` function. 
+
+-dataframe - two-dimensional objects created using the `data.frame()` function.
+
+-arrays - three-dimensional objects created using `array()`. Arrays will not be covered in this workshop.
+
+```R
+#Note how the `TRUE` turns into 1 for the vector but not the list
+my_vector <- c(1,2,4,TRUE)
+
+my_list <- list(1,2,3,TRUE)
+
+#Turning vector into matrix
+my.matrix <- matrix(c(1,2,3,4),nrow = 2, ncol = 2) 
+
+my_dataframe <- data.frame("Col_1" = c(1,2,3), "Col_2" = c(4,5,6), "Col3" = c(7,8,9))
+
+my_vector
+my_list
+my.matrix
+my_dataframe
+
+```
 
 
-`R` also has several data structures.
+```R
+#`class()` will tell you the data structure a variable is too.
+class(my_dataframe)
+```
 
-The most common data structures are:
+In `R` if you want to generate a sequence of numbers for a vector you can use the colon (`:`) operator.
 
-.
+```R
+my_vector_1 <- 0:10
+
+my_vector_2 <- c(0:7,50:60,100)
+
+my_vector_1
+
+my_vector_2
+
+```
+`R` has built in vectorization where you can perform operations on each element of the vector.
+```R
+my_vector_1 + 10
+
+new_my_vector_1 <- my_vector_1 * 10
+
+new_my_vector_1
+```
+If you need you need to generate a sequence of numbers with certain step sizes, you can use `seq()`, where the first argument is the starting number, the second is the ending number, and the third argument is the step size. 
+
+**The order of the inputs for functions matter.** If you look at the documentation for seq using `?seq()` the first three arguments are from, to, and by (`seq(from, to, by,...)`). So if your inputs are in the correct position, you do not to write the name of the argument. The order of the inputs matter.
+
+```R
+my_vector_3 <- seq(from = 0, to = 10,by = 2)
+
+#Will produce the same as `my_vector_3` above.
+my_vector_4 <- seq(0,10,2)
+
+#Including the names of the arguments that you want your inputs to be set equal to allows you to include your inputs in any order.
+my_vector_5 <- seq(by = 2, to = 10,from = 0,)
+
+my_vector_3
+my_vector_4
+my_vector_5
+
+```
+
+If you need to perform matrix multiplication on a vector or matrix, use `%*%`. You may need to `t()` to transpose a matrix for the correct result.
+
+```R
+my_vector_1 <- 1:3
+
+my_vector_2 <- 4:6
+
+matrix_multiplication_1 <- my_vector_1 %*% my_vector_2 # 1 * 1 output
+
+matrix_multiplication_1
+
+matrix_multiplication_2 <- my_vector_1 %*% t(my_vector_2) # 3 by 3 matrix
+
+matrix_multiplication_2
+```
+###Indexing
+
+Indexing is used if you want to access specific values in a data structure. In`R`'s index starts at 1. 
+
+There are two common ways to access contents inside data structures:
+
+- `[]` : Square brackets only indexes with numbers.
+
+- `$`: Dollar sign operator only indexes with names. Commonly used to access a specific column of a dataframe using the name of that column. You can use `colnames()` to determine the names of your columns, those are the names that must be used with the dollar sign operator.
+
+```R
+my_vector
+#Access the second value in my vector
+my_vector[2]
+#Indexing and changing the second value of my_vector
+my_vector[2] <- "a"
+#Note how everything is coerced into characters
+my_vector
+
+```
+
+For two-dimensional objects such as data frames, a comma is used to separate the dimensions. To access a row, the notation is (assuming the name of your dataframe is `data`) `data[row,]` and to access a column, the notation is `data[,column]` or `data$column_name`.
+
+```R
+#Access row 1
+
+my_dataframe[1,]
+
+#Different ways to obtain more than one row, the same can be used for columns.
+
+my_dataframe[1:2,]
+
+my_dataframe[c(1,3),]
+
+my_dataframe[c(1:2,3),]
+```
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## Variables
-
-Variables are objects that can contain a data type, multiple data types, a function, or a data structure.
-
-#### General rules of variables in R (rules broadly applicable to many other languages):
-> dddd
-> 
-> 
-- The first character of a variable **ALWAYS** must be a letter from ```a-z``` or ```A-Z```. A variable can a single letter (a) or a series of letters names (myvariable). 
-* Valid variable names:
-* 
-- 
-- In R, variables can contain numbers, the underscore and the period.Variables cannot contain any other symbols or symbols used for arithmetic operations or logical operations. While a1, my_variable, my.variable_2 are valid names for variables, 1a, my-var, var+1 are invalid variable names.
-
-- Variables are case sensitive: ```my_variable```, ```My_Variable```, and ```MY_VARIABLE``` are all different and cannot be substituted for one another.
-
-#The variable adopts the properties/attributes of the data type (or data structure) assigned to it. If you assign 1 into a variable called my_variable, then my_variable becomes a object that is treated like a numeric data type. Any valid operation that can be done to a numeric data type can be done to my_variable. Just as the interpreter, will see 1 + 1 as the addition of two numeric data types that equals 2, it will see my_variable + 1 as the addition of 1 and an object that contains the numeric data,1, that equals 2
-
-#You can assign a variable that has been defined to an undefined variable. If I assign 1 to a variable named my_variable_1, this is a defined variable. I can then assign my_variable_1 to a new variable named my_variable 2. In this case, my_variable_1 and my_variable_2 are objects that contain the numeric data type, 1.
-
-#It is possible to initialize a variable, which means you can create an "empty" variable, so that the interpreter knows that the variable does exist when you call that variable later in your script. There is a syntactically valid way to create these empty variables. 
+```R
+#Access the first column in my dataframe
+my_dataframe[,1]
+#Print out the name of my columns using `colnames()`, `names()` also does the same thing but is often used for 1D data.
+colnames(my_dataframe)
+#Access the first column in my dataframe using the column name
+my_dataframe$Col_1
+#You cna also use the column name in the brackets
+my_dataframe[,"Col_1"]
+```
 
 ----
 [Next Topic: Lesson 2 - Importing & Exporting Data in R](https://github.com/donishadsmith/FIU-DEI-R-Workshop/blob/main/Lesson%202%20-%20Importing%20%26%20Exporting%20Data%20in%20R.md)
