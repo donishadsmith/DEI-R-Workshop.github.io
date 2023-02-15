@@ -7,10 +7,10 @@ R has several basic data types classes.
 Some common classes of data types includes:
 
 - Character: Anything inside a single (`''`) or double (`""`) quotes. The contents Within the string are irrelevant (ex. `'a'`,`"..2567, TRUE"`).
--Numeric: Any real number or rational numbers (ex. `4`, `9.01`)
--Integer: Whole numbers that include the `L` notation after it (ex. `4L`,`3L`);
--Logical: `TRUE` and `FALSE`
--Complex: Numbers with a real and imaginary part (ex. `2i`, `4i`). The imaginary part uses the `i` notation.
+- Numeric: Any real number or rational numbers (ex. `4`, `9.01`)
+- Integer: Whole numbers that include the `L` notation after it (ex. `4L`,`3L`);
+- Logical: `TRUE` and `FALSE`
+- Complex: Numbers with a real and imaginary part (ex. `2i`, `4i`). The imaginary part uses the `i` notation.
 
 ## Variables and Basic Arithmatic
 
@@ -57,7 +57,7 @@ print(variable_1 <- "This sentence will print.")
 print(variable_2 = "This sentence won't print.")
 ```
 
-##Data Structures
+## Data Structures
 
 Data structures allow you to store multiple data types into a single variable. 
 
@@ -151,7 +151,7 @@ matrix_multiplication_2 <- my_vector_1 %*% t(my_vector_2) # 3 by 3 matrix
 
 matrix_multiplication_2
 ```
-###Indexing
+### Indexing
 
 Indexing is used if you want to access specific values in a data structure. In`R`'s index starts at 1. 
 
