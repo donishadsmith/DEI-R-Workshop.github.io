@@ -37,10 +37,9 @@ division
 modulus
 exponentiate 
 ```
-**Output:***
+**Output:**
 
 <p>
-  
   ```
   [1] 2
   [1] 1
@@ -49,7 +48,6 @@ exponentiate
   [1] 1
   [1] 8
   ```
-  
 <p>
 
 ----
