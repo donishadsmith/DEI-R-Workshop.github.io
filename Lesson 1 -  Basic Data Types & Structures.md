@@ -2,7 +2,7 @@
 
 Data types are essentially classifications/grouping of data values that only permit certain operations to be performed on it.
 
-R has several basic data types classes.
+`R` has several basic data types classes.
 
 Some common classes of data types includes:
 
@@ -113,9 +113,9 @@ print(variable_2 = "This sentence won't print.")
 
 Data structures allow you to store multiple data types into a single variable. 
 
-R has a few data types, some of the most commonly used ones are 
+`R` has a few data types, some of the most commonly used ones are:
 
--vectors: one-dimensional object created using the `c()` function, where each data type is separated by a comma. In `R` vectors must be homogeneous (have the same data type). If a vector has different data types, `R` will try to coerce the entire vector to be the same. For instance, if a vector has a character data type and a numeric data type, `R` will turn the numeric data type into a character.
+- vectors: one-dimensional object created using the `c()` function, where each data type is separated by a comma. In `R` vectors must be homogeneous (have the same data type). If a vector has different data types, `R` will try to coerce the entire vector to be the same. For instance, if a vector has a character data type and a numeric data type, `R` will turn the numeric data type into a character.
 
 - lists: one-dimensional objects created using the `list()` function. In `R` lists can be heterogeneous (contain different data types).
 
@@ -422,5 +422,7 @@ my_dataframe[,"Col_1"]
 ```
   
 <p>
+  
 ----
+  
 [Next Topic: Lesson 2 - Importing & Exporting Data in R](https://github.com/donishadsmith/FIU-DEI-R-Workshop/blob/main/Lesson%202%20-%20Importing%20%26%20Exporting%20Data%20in%20R.md)
