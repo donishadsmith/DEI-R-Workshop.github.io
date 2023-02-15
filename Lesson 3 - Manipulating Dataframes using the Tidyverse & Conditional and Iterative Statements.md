@@ -290,6 +290,19 @@ Logical expressions returns a `TRUE` or `FALSE` value. Logical expressions are m
 5 > 2
 6 != 6
 ```
+   
+#### **Output:** 
+  
+ <p>
+ 
+ ```
+    [1] TRUE
+    [1] FALSE
+ ```
+   
+ <p>
+ 
+----
 ----
 ### Conditional Statements
 Conditional Statements (if-else statements) execute a block of code when a certain condition, specified by the user, has been met.
