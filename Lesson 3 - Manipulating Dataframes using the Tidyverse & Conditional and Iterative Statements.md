@@ -12,7 +12,8 @@ Sometimes, before you conduct an analysis, you may need to log transform your da
 
 The tidyverse must be installed and the specific packages in the tidyverse must be loaded in.
 
-
+----
+#### **R Code:**
 ```R
 install.packages("tidyverse")
 
@@ -20,36 +21,58 @@ library(tidyr)
 
 library(dplyr)
 ```
+----
 
+**Note: During some sessions, you may need to load in multiple packages in your current `R` session, there is a great `R` package named pacman, which allows you to easily load in multiple packages at once.**
 
+----
+#### **R Code:**
+```R
+install.packages("pacman")
+
+pacman::p_load(dplyr,tidyr)
+```
+----
+
+#### **R Code:**
 ```R
 data <- read.csv("C:/Users/donis/Documents/R Workshop/iris.csv")
 ```
+----
 
 When you load in dplyr or tidyr, you have access to a new operator - the pipe operator `%>%`. This operator is useful when you need to pass the outputs of one function into another or chain multiple operations together. `dataframe %>% ` allows you to use column names from your dataframe in the next operation or allows you to filter contents in a dataframe. Think of the pipe operator as an assembly line that gives the output of its task to the next person in line.
 
+----
+
+#### **R Code:**
 ```R
 #The dataframe is used as the input for colnames. This is the same as colnames(data)
 data %>% colnames()
-
-
 ```
+
+----
 
 ### Mutate
 
 Using the `mutate()` function you can create a simultaneously assign a transformed column to a new column while retaining the old column or transform a column and assign the transformed column back to itself (overwriting).
+
+----
+
+#### **R Code:**
 ```R
 # Assigning the outputs of these operations back into data.
 data <- data %>% mutate(Sepal.Length_Log = log(Sepal.Length))
 
 data <- data %>% mutate(Sepal.Length = scale(Sepal.Length))
 ```
-
+----
 
 ### Summarising
 
 `group_by()` 
 
+----
+#### **R Code:**
 ```R
 # Summarize data
 summary_data <- data %>%
@@ -58,25 +81,36 @@ summary_data <- data %>%
             max = max(Sepal.Length),
             min = min(Sepal.Length))
 ```
+----
 
 ### Filtering
+
+----
+#### **R Code:**
+
 ```R
 reduced_data <- data %>% group_by(Species) %>% filter(Species != "setosa") 
 ```
 
+----
+#### **R Code:**
 ```R
 reduced_data <- data %>% group_by(Species) %>% 
   filter(Species %in% c("versicolor", "virginica"))
 ```
-
+----
+#### **R Code:**
 ```R
 reduced_data <- data %>% filter(!is.na(Sepal.Length) & !is.na(Sepal.Width)) 
 ```
-
+----
 #### Complete Cases
 Some instances, you may only want complete data, you can use `R`'s built-in `complete.cases()` function to get the participants with complete data.
 
 The `.` is a shortcut to the output of the previous step. In this case, `.` is just `data`. Each function that receives the output from the pipe operator has an implicit dot.
+
+----
+#### **R Code:**
 ```R
 #All work
 reduced_data <- data %>% filter(complete.cases(.))
@@ -87,11 +121,14 @@ reduced_data <- data %>% complete.cases(.)
 
 reduced_data <- data %>% complete.cases()
 ```
-
+----
 In certain cases, such as having a function inside a function `filter(complete.cases(.))`. If you need the output of the previous operation as the input for the outermost and innermost function, you need to add an explicit dot for the input of the inner function because the outermost function already used the implicit dot (`filter(complete.cases(.))` is actually `filter(.,complete.cases(.))` which translates to `filter(data,complete.cases(data))` since the previous operation is just the entire dataframe).
 
 
 ### Selecting columns
+
+----
+#### **R Code:**
 ```R
 sepal_data <- data %>% select(c("Sepal.Length","Sepal.Width"))
 
@@ -99,7 +136,11 @@ colnames(sepal_data)
 
 dim(sepal_data)
 ```
-This code produces the same as above but uses dplyr's `matches` function to get all column names that have "Sepal" or "sepal" in the name (`matches` is not case sensitive).
+----
+This code produces the same as above but uses dplyr's `matches()` function to get all column names that have "Sepal" or "sepal" in the name (`matches()` is not case sensitive).
+
+----
+#### **R Code:**
 ```R
 sepal_data <- data %>% select(matches("Sepal"))
 
@@ -107,6 +148,7 @@ colnames(sepal_data)
 
 dim(sepal_data)
 ```
+----
 
 ## Conditional & Iterative Statements
 
@@ -130,11 +172,13 @@ Logical expressions returns a `TRUE` or `FALSE` value. Logical expressions are m
 
 - `!=` : Not equal operator, evaluates of the object to the left does not equal the object to the right.
 
+----
+#### **R Code:**
 ```R
 5 > 2
 6 != 6
 ```
-
+----
 ### Conditional Statements
 Conditional Statements (if-else statements) execute a block of code when a certain condition, specified by the user, has been met.
 
@@ -241,6 +285,8 @@ Within the for loop is an if-else statement, `is.numeric()` returns either a `TR
 
 If `is.numeric()` returns `FALSE`, instead of mean-centering the column, the `else` statement will activate and the column will be factored using `R`'s built in `factor()` function.
 
+----
+#### **R Code:**
 ```R
 
 for(i in 2:ncol(data)){
@@ -259,10 +305,34 @@ for(i in 2:ncol(data)){
 
 #Note how iteration variable gets reassigned every iteration and for the final iteration, the else statement was activated because `is.numeric()` returned `FALSE`.
 ```
+#### **Output:**
 
+<p>
+
+```
+  [1] 2
+  [1] TRUE
+  [1] "Mean-center"
+  [1] 3
+  [1] TRUE
+  [1] "Mean-center"
+  [1] 4
+  [1] TRUE
+  [1] "Mean-center"
+  [1] 5
+  [1] TRUE
+  [1] "Mean-center"
+  [1] 6
+  [1] FALSE
+  [1] "Factor"
+  
+```
+
+----
 The for loop above executes this block of code six times.
 
 For the first iteration, `i = 2`. The else statement is not activated.
+
 ```
 for(i in 2:ncol(data)){
   if(is.numeric(data[,2])){
@@ -314,6 +384,9 @@ for(i in 2:ncol(data)){
 
 
 This for loop does the same as the above for loop; however instead instead of using numbers for indexing, we use the names of the columns for indexing. 
+
+----
+#### **R Code:**
 ```R
 #Printing the column names
 for(name in colnames(data_2[,2:ncol(data_2)])){
@@ -332,9 +405,34 @@ for(name in colnames(data_2[,2:ncol(data_2)])){
 }
 
 ```
+#### **Output:**
 
+<p>
+
+```
+  [1] "Sepal.Length"
+  [1] TRUE
+  [1] "Mean-center"
+  [1] "Sepal.Width"
+  [1] TRUE
+  [1] "Mean-center"
+  [1] "Petal.Length"
+  [1] TRUE
+  [1] "Mean-center"
+  [1] "Petal.Width"
+  [1] TRUE
+  [1] "Mean-center"
+  [1] "Species"
+  [1] FALSE
+  [1] "Factor"
+  
+```
+----
+  
 Here, we use a `while` loop. We create a variable `count <- 1` and assign `1` to it, The logical expression in the while loop returns `TRUE` if the count is less.
 
+----
+#### **R Code:**
 ```R
 count <- 1
 
@@ -350,8 +448,30 @@ while(count <= ncol(data_3)){
   print(count <= ncol(data_3))
 }
 ```
-Be very cautious with `while` statements, if you have a logical condition that always returns `TRUE`, the while statement will run indefinitely (infinite loop) unless it encounters an error (such as an index going out of bounds) or program  becomes unresponsive and crashes. In the above `while` loop, if we don't add 1 to count for each iteration of the loop, then count would always be 1 and the logical expression `count <= ncol(data_3)`, which is essentially `1 <= 6` would always return `TRUE`. Just make sure that the logical condition in your while loop eventually returns `FALSE` or you use an `if` statement with `break` to stop the while loop if a certain condition is met.
+#### **Output:**
 
+<p>
+
+```
+  [1] 2
+  [1] TRUE
+  [1] 3
+  [1] TRUE
+  [1] 4
+  [1] TRUE
+  [1] 5
+  [1] TRUE
+  [1] 6
+  [1] TRUE
+  [1] 7
+  [1] FALSE
+  
+```
+----                             
+Be very cautious with `while` statements, if you have a logical condition that always returns `TRUE`, the while statement will run indefinitely (infinite loop) unless it encounters an error (such as an index going out of bounds) or program  becomes unresponsive and crashes. In the above `while` loop, if we do not add 1 to count for each iteration of the loop, then count would always be 1 and the logical expression `count <= ncol(data_3)`, which is essentially `1 <= 6` would always return `TRUE`. Just make sure that the logical condition in your while loop eventually returns `FALSE` or you use an `if` statement with `break` to stop the while loop if a certain condition is met.
+
+----
+#### **R Code:**
 ```R
 x <- 1
 while(TRUE) {
@@ -363,3 +483,23 @@ while(TRUE) {
   x <- x + 1
 }
 ```
+#### **Output:**
+
+<p>
+
+```
+  [1] 1
+  [1] 2
+  [1] 3
+  [1] 4
+  [1] 5
+  [1] 6
+  [1] 7
+  [1] 8
+  [1] 9
+  [1] 10
+  
+```
+----  
+  
+  
