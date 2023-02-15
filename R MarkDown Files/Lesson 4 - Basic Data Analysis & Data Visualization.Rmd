@@ -1,0 +1,129 @@
+---
+title: "Lesson 4 - Basic Data Analysis & Data Visualization"
+---
+
+
+```{r}
+data <- read.csv("C:/Users/donis/Documents/R Workshop/iris.csv")
+```
+
+
+`R` has base functions to conduct regression and ANOVA analyses.
+
+For linear regression you can use `R`'s built-in `lm()` function. The form for the regression equation is `Dependent Variable ~ Independent Variable`. Also, you need to use the `data =` argument so that `lm()` knows that you are referring to variable names inside your data frame. You can see the results of the regression model using `R`'s built-in `summary()`function. 
+
+`Pr(>|t|)` is the p-value if you see an asterisk(`*`) next to the number, your variable is significant.
+
+```{r}
+#`lm()` outputs an `lm` object that you can save inside a variable
+mod_1 <-  lm(Sepal.Length ~ Petal.Width, data = data)
+# You can see
+summary(model_1)
+```
+
+Here, we add an additional variable to the model.
+```{r}
+mod_2 <-  lm(Sepal.Length ~ Petal.Width + Petal.Length, data = data)
+
+summary(model_2)
+```
+
+We can use `R`'s built-in `anova()` function to see which model is better (reduces the residuals).
+```{r}
+anova(model_1,model_2)
+```
+
+```{r}
+plot(model_1)
+```
+
+
+
+```{r}
+hist(resid(model_1),main = "Histogram", xlab = "Residuals")
+```
+
+
+
+```{r}
+aov_model <- aov(Sepal.Length ~ Species, data = data)
+
+summary(aov_model)
+```
+
+```{r}
+model_3 <- lm(Sepal.Length ~ Species, data = data)
+
+summary(model_3)
+```
+To prove that the intercept is the mean sepal length of the setosa species, we will use `which()` to get the indices of data$Species that is equal to setosa. The `which()` function is useful for obtaining the indices of values in a vector that meet a logical condition. The individual columns in a data frame can be treated as a vector since it is a one dimensional object.
+
+
+```{r}
+which(data$Species == "setosa")
+```
+We can use these indices to get the rows of the "Sepal Length" column for only the "setosa" species. Then obtain the mean.
+
+```{r}
+mean(data[which(data$Species == "setosa"),"Sepal.Length"])
+```
+We can also get the difference in the means of the other species and the "setosa" species.
+```{r}
+mean(data[which(data$Species == "versicolor"),"Sepal.Length"]) - mean(data[which(data$Species == "setosa"),"Sepal.Length"]) 
+```
+
+```{r}
+mean(data[which(data$Species == "virginica"),"Sepal.Length"]) - mean(data[which(data$Species == "setosa"),"Sepal.Length"]) 
+```
+
+
+We can use `R`'s built-in `relevel()` function to change the reference group for our regression model.
+```{r}
+levels(data$Species)
+
+data$Species <- relevel(data$Species, ref = "virginica")
+
+levels(data$Species)
+
+```
+
+
+
+
+
+
+```{r}
+#reduced_data <-
+data %>% group_by(Species) %>% 
+  filter(Species %in% c("versicolor", "virginica")) %>% mutate(Species = relevel(c("versicolor" = 0, "virginica" = 1)))
+
+#binary_model <- glm(Species ~ Sepal.Length, family = "binomial")
+
+
+
+```
+
+
+
+
+
+
+```{r}
+model_3 <- lm(Sepal.Length ~ Species, data = data)
+
+summary(model_3)
+```
+
+
+
+
+# Plot a scatter plot
+plot(data$independent_variable, data$dependent_variable,
+     xlab = "Independent Variable", ylab = "Dependent Variable", 
+     main = "Scatter Plot of Independent vs. Dependent Variable")
+
+# Plot a scatter plot using ggplot2
+ggplot(data, aes(x = independent_variable, y = dependent_variable)) +
+  geom_point() +
+  labs(x = "Independent Variable", y = "Dependent Variable", 
+       title = "Scatter Plot of Independent vs. Dependent Variable")
