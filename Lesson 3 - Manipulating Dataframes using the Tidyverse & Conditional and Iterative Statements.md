@@ -1,12 +1,12 @@
 
-# Lesson 3 - Manipulating Dataframes using the Tidyverse & Conditional and Iterative Statements
+# Lesson 3 - Manipulating Data Frames using the Tidyverse & Conditional and Iterative Statements
 
 
 In this lesson, we will cover data manipulation using base `R` functions, conditional and iterative statements, and functions from popular packages in the Tidyverse such as tidyr & dplyr.
 
 ## Tidyverse
 
-The [Tidyverse](https://www.tidyverse.org/) is collection of several `R` packages that offers functions that makes completing data science related tasks, such as manipulation of dataframes, easier to complete in `R`.
+The [Tidyverse](https://www.tidyverse.org/) is collection of several `R` packages that offers functions that makes completing data science related tasks, such as manipulation of data frames, easier to complete in `R`.
 
 Sometimes, before you conduct an analysis, you may need to log transform your data, scale your data, filter out certain participants, etc.
 
@@ -37,7 +37,20 @@ pacman::p_load(dplyr,tidyr)
 #### **R Code:**
 ```R
 data <- read.csv("C:/Users/donis/Documents/R Workshop/iris.csv")
+
+#The `head()` function shows the first few rows of your data frame
+head(data)
 ```
+
+#### **Output:**
+
+<p>
+
+```
+ ![Screenshot (30)](https://user-images.githubusercontent.com/112973674/219183937-14ae93a4-2367-4edb-b4e2-9425afb33996.png)
+ 
+```
+  
 ----
 
 When you load in dplyr or tidyr, you have access to a new operator - the pipe operator `%>%`. This operator is useful when you need to pass the outputs of one function into another or chain multiple operations together. `dataframe %>% ` allows you to use column names from your dataframe in the next operation or allows you to filter contents in a dataframe. Think of the pipe operator as an assembly line that gives the output of its task to the next person in line.
@@ -48,6 +61,15 @@ When you load in dplyr or tidyr, you have access to a new operator - the pipe op
 ```R
 #The dataframe is used as the input for colnames. This is the same as colnames(data)
 data %>% colnames()
+```
+#### **Output:**
+
+<p>
+
+```
+  [1] "X" "Sepal.Length" "Sepal.Width"  "Petal.Length" "Petal.Width" 
+  [6] "Species" 
+  
 ```
 
 ----
@@ -152,13 +174,13 @@ dim(sepal_data)
 
 ## Conditional & Iterative Statements
 
-Data manipulation can be a repetitive task if you need to perform the same or multiple operations on several columns of a dataframe. Conditional and iterative statements can be combined to automate this task.
+Data manipulation can be a repetitive task if you need to perform the same or multiple operations on several columns of a data frame. Conditional and iterative statements can be combined to automate this task.
 
 ### Logical expressions
 
 Logical expressions returns a `TRUE` or `FALSE` value. Logical expressions are made using logical operators. 
 
-`R` has a few logical operators that can return a `TRUE` or `FALSE` value.
+`R` has a few logical operators that can return a `TRUE` or `FALSE` value:
 
 - `>` : Greater than operator, evaluates if a **numeric** object on the left of the operator is greater than the numeric object to the right of the operator.
 
