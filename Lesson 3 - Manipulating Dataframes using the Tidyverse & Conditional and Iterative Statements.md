@@ -139,13 +139,13 @@ The `.` is a shortcut to the output of the previous step. In this case, `.` is j
 #### **R Code:**
 ```R
 #All work
-reduced_data <- data %>% filter(complete.cases(.))
+complete_data <- data %>% filter(complete.cases(.))
 
-reduced_data <- data %>% filter(.,complete.cases(.))
+complete_data <- data %>% filter(.,complete.cases(.))
 
-reduced_data <- data %>% complete.cases(.)
+complete_data <- data %>% complete.cases(.)
 
-reduced_data <- data %>% complete.cases()
+complete_data <- data %>% complete.cases()
 ```
 ----
 In certain cases, such as having a function inside a function `filter(complete.cases(.))`. If you need the output of the previous operation as the input for the outermost and innermost function, you need to add an explicit dot for the input of the inner function because the outermost function already used the implicit dot (`filter(complete.cases(.))` is actually `filter(.,complete.cases(.))` which translates to `filter(data,complete.cases(data))` since the previous operation is just the entire dataframe).
