@@ -330,6 +330,7 @@ my_vector[my_vector > 1 & my_vector < 6]
   [1] 2 3 4 5
 ```
 <p>
+  
 ----
   
 - `|` : logical AND evaluates if two or more statements are TRUE, Like `any()` it will return `TRUE` if any logical expressions return `TRUE`. Can also be used for indexing.
