@@ -214,7 +214,7 @@ The conditional statements in `R`:
 
 - `if()` statements: evaluates if a certain condition returns as `TRUE`. If `TRUE` is returned, then the code block is executed.
 
-The structure of if statements (most conditional and iterative statements in R).
+The structure of if statements (most conditional and iterative statements in `R`).
 
 The expression goes inside the parenthesis, and the code block goes inside the curly braces. 
 
