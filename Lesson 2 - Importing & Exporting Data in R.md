@@ -31,10 +31,10 @@ getwd()
 
 <p>
   
-   
-  ```
+ 
+```
   [1] "C:/Users/Documents/R MarkDown Files"
-  ``` 
+``` 
   
 <p>
 
@@ -54,9 +54,9 @@ getwd()
 <p>
   
   
-  ```
+```
   [1] "C:/Users/Documents"  
-  ```
+```
   
 <p>  
 
@@ -123,12 +123,12 @@ search()
 <p>
   
   
-  ```
+```
   [1] ".GlobalEnv"        "package:readxl"    "tools:rstudio"    
   [4] "package:stats"     "package:graphics"  "package:grDevices"
   [7] "package:utils"     "package:datasets"  "package:methods"  
   [10] "Autoloads"        "package:base"   
-  ```
+```
   
 <p>  
 
@@ -207,13 +207,13 @@ search()
 <p>
   
   
-  ```
+```
   [1] ".GlobalEnv"        "tools:rstudio"     "package:stats"    
   [4] "package:graphics"  "package:grDevices" "package:utils"    
   [7] "package:datasets"  "package:methods"   "Autoloads"        
   [10] "package:base"   
   
-  ```
+```
  
 <p> 
  
