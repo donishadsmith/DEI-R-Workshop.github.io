@@ -43,8 +43,9 @@ head(data)
 ```
 
 #### **Output:**
+![Screenshot (32)](https://user-images.githubusercontent.com/112973674/219190086-b7a1f1d2-b6b7-41b8-be84-b79b8eda5005.png)
 
-![Screenshot (30)](https://user-images.githubusercontent.com/112973674/219183937-14ae93a4-2367-4edb-b4e2-9425afb33996.png)
+
 
 ----
 
