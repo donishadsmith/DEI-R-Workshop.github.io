@@ -43,7 +43,7 @@ head(data)
 ```
 
 #### **Output:**
-
+![Screenshot (30)](https://user-images.githubusercontent.com/112973674/219183937-14ae93a4-2367-4edb-b4e2-9425afb33996.png)
 <p>
 
 ```
