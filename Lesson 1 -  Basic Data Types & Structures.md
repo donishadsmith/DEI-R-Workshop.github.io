@@ -56,6 +56,10 @@ exponentiate
 
 Variables also adapt the properties of a datatype. To demonstrate this, we will use one of `R`'s base functions `class()`, which will tell you the class a data type belongs to. `R` like any other programming languages includes base functions that are automatically available once the `R` console is open. Functions are blocks of code that are assigned to a variable and take on the form `function_name()`. The open parenthesis are due to functions accepting an input/argument, to perform an operation on and produce an output. If you want to see the arguments that a function contains, you can use `?function_name` or `?function_name()` (ex. `?class` or `?class()`). You will be presented with a documentation page informing you of all the parameters the function has.
 
+----
+  
+#### **R Code:**
+  
 ```R
 #This variable stored the output of a mathematical expression between two numeric data types. 
 
@@ -66,18 +70,45 @@ class(addition)
 #Variable used for addition
 addition <- addition + 2
 ```
+#### **Output:**
 
+<p>
+  
+```
+  [1] 2
+  [1] "numeric"
+```
+  
+<p>
+
+----
+            
+            
 #### What's the difference between the assignment operators?
 Unlike the equal sign operator (`=`), the single arrow head operator (`<-`) can assign variables inside functions.
 
 ----
-**R Code:**
+                                                                            
+#### **R Code:**
 
 ```R
 print(variable_1 <- "This sentence will print.")
 print(variable_2 = "This sentence won't print.")
 ```
+#### **Output:**
 
+<p>
+  
+```
+  [1] "This sentence will print."
+  Error in print.default(variable_2 = "This sentence won't print.") :
+  argument "x" is missing, with no default
+```
+  
+<p>
+
+----
+  
 ## Data Structures
 
 Data structures allow you to store multiple data types into a single variable. 
@@ -95,7 +126,7 @@ R has a few data types, some of the most commonly used ones are
 - arrays: three-dimensional objects created using `array()`. Arrays will not be covered in this workshop.
 
 ----
-**R Code:**
+#### **R Code:**
 
 ```R
 #Note how the `TRUE` turns into 1 for the vector but not the list
@@ -114,7 +145,37 @@ my.matrix
 my_dataframe
 
 ```
+#### **Output:**
 
+<p>
+  
+```
+   [1] 1 2 4 1
+  
+   [[1]]
+   [1] 1
+
+   [[2]]
+   [1] 2
+
+   [[3]]
+   [1] 3
+
+   [[4]]
+   [1] TRUE
+
+        [,1] [,2]
+   [1,]    1    3
+   [2,]    2    4
+  
+        Col_1 Col_2 Col3
+   [1]  1     1     4    7
+   [1]  2     2     5    8
+   [1]  3     3     6    9
+```
+  
+<p>
+ 
 ----
 **R Code:**
 
