@@ -19,7 +19,7 @@ Variables are objects that can store data. Data is assigned to a variable via an
 *Note: The first character of a variable needs to start with a letter `a-z`or `A-Z`. In R, the symbols that variables can contain are the underscore (`_`) and the period (`.`).*
 
 ----
-**R Code:**
+#### **R Code:**
 ```R
 #Note how the result of each operation is stored in the variable
 addition = 1 + 1
@@ -37,17 +37,19 @@ division
 modulus
 exponentiate 
 ```
-**Output:**
+#### **Output:**
 
 <p>
-  ```
+  
+```
   [1] 2
   [1] 1
   [1] 8
   [1] 10
   [1] 1
   [1] 8
-  ```
+```
+  
 <p>
 
 ----
