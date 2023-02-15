@@ -7,9 +7,9 @@ Data types are essentially classifications/grouping of data values that only per
 Some common classes of data types includes:
 
 - Character: Anything inside a single (`''`) or double (`""`) quotes. The contents Within the string are irrelevant (ex. `'a'`,`"..2567, TRUE"`).
-- Numeric: Any real number or rational numbers (ex. `4`, `9.01`)
+- Numeric: Any real number or rational numbers (ex. `4`, `9.01`).
 - Integer: Whole numbers that include the `L` notation after it (ex. `4L`,`3L`);
-- Logical: `TRUE` and `FALSE`
+- Logical: `TRUE` and `FALSE`.
 - Complex: Numbers with a real and imaginary part (ex. `2i`, `4i`). The imaginary part uses the `i` notation.
 
 ## Variables and Basic Arithmatic
