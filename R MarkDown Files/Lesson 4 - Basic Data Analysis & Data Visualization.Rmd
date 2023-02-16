@@ -150,7 +150,7 @@ In `R`, you have the ability to create your own functions using `function()`. If
 
 General structure of a function:
 ```
-varaible <- function(argument1,argument2,...){
+variable <- function(argument1,argument2,...){
 Code 1
 Code 2
 }
