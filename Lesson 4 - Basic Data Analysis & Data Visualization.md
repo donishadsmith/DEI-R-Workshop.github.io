@@ -12,105 +12,195 @@ title: "Lesson 4 - Basic Data Analysis & Data Visualization"
 In this lesson, we cover ways to conduct basic linear regression, anova, and  plotting. Additionally, we also cover how to use user-defined functions.
 
 ## Data Analysis & Plotting
-
+----
+#### **R Code:**
 ```R
 data <- read.csv("C:/Users/donis/Documents/R Workshop/iris.csv")
 ```
-
+----
 
 `R` has base functions to conduct regression and ANOVA analyses.
 
 For linear regression you can use `R`'s built-in `lm()` function. The form for the regression equation is `Dependent Variable ~ Independent Variable`. Also, you need to use the `data =` argument so that `lm()` knows that you are referring to variable names inside your data frame. You can see the results of the regression model using `R`'s built-in `summary()`function. 
 
 `Pr(>|t|)` is the p-value if you see an asterisk(`*`) next to the number, your variable is significant.
-
+----
+#### **R Code:**
 ```R
 #`lm()` outputs an `lm` object that you can save inside a variable
 mod <-  lm(formula = Sepal.Length ~ Petal.Width, data = data)
 
 summary(mod)
 ```
+#### **Output:**
+----
 `R` also has a built-in `glm()` function that can also be used for linear regression; however `glm()` includes an argument (`family =`), which allows you to change the error distribution and link function used in your model. This allows you to perform different types of regression analysis such as binomial regression (`family = binomial`) and poisson regression (`family = binomial`).
 
+----
+#### **R Code:**
 ```R
 #Linear regression using glm gives the same results as lm
 mod_glm <- glm(formula = Sepal.Length ~ Petal.Width, data = data, family = "gaussian")
 summary(mod_glm)
 ```
-
-
+#### **Output:**
+----
 
 Here, we add an additional variable to the model.
+
+----
+#### **R Code:**
 ```R
 mod_extended <-  lm(Sepal.Length ~ Petal.Width + Petal.Length, data = data)
 
 summary(mod_extended)
 ```
-
+#### **Output:**
+----
 We can use `R`'s built-in `anova()` function to see which model is better (reduces the residuals).
+
+----
+#### **R Code:**
 ```R
 anova(mod,mod_extended)
 ```
-
+#### **Output:**
+----
 The `plot()` function can be used to conduct regression diagnostics pertaining to normality of residuals, heteroscedasticity, and leverage. 
+
+----
+#### **R Code:**
 ```R
 plot(mod)
 ```
+----
 
 The `hist()` function can be used to create histograms. Here, we create a histogram the residuals from our model, which is extracted using `resid()`. The `main =` argument is used to title the histogram and the `xlab =` argument is used to title the x-axis of the histogram.
+
+----
+#### **R Code:**
 ```R
 hist(resid(mod),main = "Histogram", xlab = "Residuals")
 ```
-
+#### **Output:**
+----
 `R`'s built-in `aov()` function can be used to perform an ANOVA. Here we regress a continuous variable "Sepal.Length" onto a categorical variable "Species". The same structure for the equation that was used for `lm()` and `glm()` is used for `aov()`.
+
+----
+#### **R Code:**
 ```R
 aov_model <- aov(Sepal.Length ~ Species, data = data)
 
 summary(aov_model)
 ```
+#### **Output:**
+----
+
 The ANOVA above shows that the sepal length is different among the species of flowers; however, we don't know which species, if not all, are significantly different. We can do two things:
 
 - We can conduct a post-hoc analysis such as a Tukey test or pairwise t-test using bonferonni's correction to determine which contrasts are significantly different while accounting for multiple comparisons.
 
+----
+#### **R Code:**
 ```R
 TukeyHSD(aov_model)
 ```
-
+#### **Output:**
+----
+#### **R Code:**
 ```R
 pairwise.t.test(x = data$Sepal.Length, g = data$Species, p.adjust.method = "bonferroni")
 ```
-
+#### **Output:**
+----
 - We can use `lm()` or `glm()` for linear regression with categorical predictors if we are only interested in seeing the difference in means between a specific reference group and all other groups. The mean of the reference group is the intercept and the beta coefficient for the other groups are the difference in mean between that group and the reference group. This analysis can be used to determine which groups significantly differ from the reference group.
 
+----
+#### **R Code:**
 ```R
 mod <- lm(Sepal.Length ~ Species, data = data)
 
 summary(mod)
 ```
+#### **Output:**
+----
 To prove that the intercept is the mean sepal length of the setosa species, we will use `which()` to get the indices of data$Species that is equal to setosa. The `which()` function is useful for obtaining the indices of values in a vector that meet a logical condition. The individual columns in a data frame can be treated as a vector since it is a one dimensional object.
 
-
+----
+#### **R Code:**
 ```R
 which(data$Species == "setosa")
 ```
+
+#### **Output:**
+
+<p>
+     
+```
+   [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29
+   [30] 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50
+```
+<p>
+     
+----
 We can use these indices to get the rows of the "Sepal Length" column for only the "setosa" species. Then obtain the mean.
 
+----
+#### **R Code:**
 ```R
 mean(data[which(data$Species == "setosa"),"Sepal.Length"])
 ```
+#### **Output:**
+
+<p>
+     
+```
+   [1] 5.006
+```
+<p>     
+     
+----
+     
 We can also get the difference in the means of the other species and the "setosa" species.
+     
+----
+#### **R Code:**
 ```R
 mean(data[which(data$Species == "versicolor"),"Sepal.Length"]) - mean(data[which(data$Species == "setosa"),"Sepal.Length"]) 
 ```
+#### **Output:**
 
+<p>
+     
+```
+   [1] 0.93
+```
+<p>     
+     
+  
+----
+#### **R Code:**
 ```R
 mean(data[which(data$Species == "virginica"),"Sepal.Length"]) - mean(data[which(data$Species == "setosa"),"Sepal.Length"]) 
 ```
+#### **Output:**
 
+<p>
+     
+```
+   [1] 1.582
+```
+<p>     
+     
+  
+----
 
 We can use `R`'s built-in `relevel()` function to change the reference group for our regression model.
 
 ```R
+#Change to factor
+data$Species <- factor(data$Species)
+
 levels(data$Species)
 
 data$Species <- relevel(data$Species, ref = "virginica")
@@ -118,6 +208,19 @@ data$Species <- relevel(data$Species, ref = "virginica")
 levels(data$Species)
 
 ```
+#### **Output:**
+
+<p>
+     
+```
+   [1] "setosa"     "versicolor" "virginica" 
+   [1] "virginica"  "setosa"     "versicolor"
+```
+<p>     
+     
+  
+----  
+     
 Here we can see reference group (intercept) has changed due to reveling.
 ```R
 
@@ -164,7 +267,8 @@ Let's say you are conducting multiple regression analysis, where you need to fin
 ```R
 #Creating a variable named rss, the same name will be used in the functions.
 rss <- 0
-# `predict` allows you to use the model parameters to get the predicted response for each of your participants and `sum` is used to add the squared difference of the predicted and actual response
+# `predict` allows you to use the model parameters to get the predicted response for each of your participants 
+# and `sum` is used to add the squared difference of the predicted and actual response
 
 rss_v1 <- function(model){
   rss <- sum((data$Sepal.Length - predict(model))^2)
@@ -178,20 +282,46 @@ rss_v2 <- function(model){
 
 
 Notice how despite the same variable name being used in the function, the "rss" variable declared outside the function has not changed.
+
+#### **R Code:**     
 ```R
 rss_v1(mod_1)
 
 rss
 ```
+#### **Output:**
+
+<p>
+     
+```
+   [1] 33.81489
+   [1] 33.81489
+```
+<p>     
+     
+  
+----     
+     
 Here, `rss_v2()` uses the super assignment operator (`<<-`), which overwrites the original value assigned to rss. Even if we didn't create a variable named "rss", the super assignment operator would have created a global variable named "rss". 
+         
+----
+#### **R Code:**           
 ```R
 rss_v2(mod_1)
 
 rss
 ```
+#### **Output:**
 
+<p>
+     
+```
+   [1] 33.81489
 
-
+```
+<p>     
+     
+  
 ----
 
 [Previous Lesson](https://github.com/donishadsmith/FIU-DEI-R-Workshop/blob/main/Lesson%203.1%20-%20Conditional%20%26%20Iterative%20Statements.md) 
