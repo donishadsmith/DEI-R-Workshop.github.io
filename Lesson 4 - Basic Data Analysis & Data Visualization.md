@@ -24,6 +24,7 @@ data <- read.csv("C:/Users/donis/Documents/R Workshop/iris.csv")
 For linear regression you can use `R`'s built-in `lm()` function. The form for the regression equation is `Dependent Variable ~ Independent Variable`. Also, you need to use the `data =` argument so that `lm()` knows that you are referring to variable names inside your data frame. You can see the results of the regression model using `R`'s built-in `summary()`function. 
 
 `Pr(>|t|)` is the p-value if you see an asterisk(`*`) next to the number, your variable is significant.
+
 ----
 #### **R Code:**
 ```R
@@ -33,6 +34,9 @@ mod <-  lm(formula = Sepal.Length ~ Petal.Width, data = data)
 summary(mod)
 ```
 #### **Output:**
+
+![Screenshot (47)](https://user-images.githubusercontent.com/112973674/219263921-c68d332a-43f6-4661-ae90-9ff6cd3f4146.png)
+
 ----
 `R` also has a built-in `glm()` function that can also be used for linear regression; however `glm()` includes an argument (`family =`), which allows you to change the error distribution and link function used in your model. This allows you to perform different types of regression analysis such as binomial regression (`family = binomial`) and poisson regression (`family = binomial`).
 
@@ -44,6 +48,8 @@ mod_glm <- glm(formula = Sepal.Length ~ Petal.Width, data = data, family = "gaus
 summary(mod_glm)
 ```
 #### **Output:**
+![Screenshot (48)](https://user-images.githubusercontent.com/112973674/219264050-4bb64fb0-191d-4ea0-b4c3-5035a887625e.png)
+
 ----
 
 Here, we add an additional variable to the model.
@@ -56,6 +62,9 @@ mod_extended <-  lm(Sepal.Length ~ Petal.Width + Petal.Length, data = data)
 summary(mod_extended)
 ```
 #### **Output:**
+
+![Screenshot (49)](https://user-images.githubusercontent.com/112973674/219264151-5612dcfc-0b24-427b-94e2-cb7a7af966bc.png)
+
 ----
 We can use `R`'s built-in `anova()` function to see which model is better (reduces the residuals).
 
@@ -65,6 +74,9 @@ We can use `R`'s built-in `anova()` function to see which model is better (reduc
 anova(mod,mod_extended)
 ```
 #### **Output:**
+![Screenshot (50)](https://user-images.githubusercontent.com/112973674/219264229-a7328cdb-3804-4bcf-b9c3-36b83f1804d0.png)
+
+
 ----
 The `plot()` function can be used to conduct regression diagnostics pertaining to normality of residuals, heteroscedasticity, and leverage. 
 
@@ -83,6 +95,9 @@ The `hist()` function can be used to create histograms. Here, we create a histog
 hist(resid(mod),main = "Histogram", xlab = "Residuals")
 ```
 #### **Output:**
+![Screenshot (51)](https://user-images.githubusercontent.com/112973674/219264307-eb9e0482-bdf5-4e4f-b831-95ff0ae354b7.png)
+
+
 ----
 `R`'s built-in `aov()` function can be used to perform an ANOVA. Here we regress a continuous variable "Sepal.Length" onto a categorical variable "Species". The same structure for the equation that was used for `lm()` and `glm()` is used for `aov()`.
 
@@ -94,6 +109,9 @@ aov_model <- aov(Sepal.Length ~ Species, data = data)
 summary(aov_model)
 ```
 #### **Output:**
+
+![Screenshot (52)](https://user-images.githubusercontent.com/112973674/219264418-766b376a-f220-4de7-97de-40bb9a9ccbf0.png)
+
 ----
 
 The ANOVA above shows that the sepal length is different among the species of flowers; however, we don't know which species, if not all, are significantly different. We can do two things:
@@ -106,12 +124,18 @@ The ANOVA above shows that the sepal length is different among the species of fl
 TukeyHSD(aov_model)
 ```
 #### **Output:**
+![Screenshot (53)](https://user-images.githubusercontent.com/112973674/219264503-23c17ac0-c602-4f65-b4a1-9aac6877b8e4.png)
+
+
 ----
 #### **R Code:**
 ```R
 pairwise.t.test(x = data$Sepal.Length, g = data$Species, p.adjust.method = "bonferroni")
 ```
 #### **Output:**
+
+![Screenshot (54)](https://user-images.githubusercontent.com/112973674/219264589-1fda8e90-b309-499a-b1de-c28c25fccfb1.png)
+
 ----
 - We can use `lm()` or `glm()` for linear regression with categorical predictors if we are only interested in seeing the difference in means between a specific reference group and all other groups. The mean of the reference group is the intercept and the beta coefficient for the other groups are the difference in mean between that group and the reference group. This analysis can be used to determine which groups significantly differ from the reference group.
 
@@ -123,6 +147,8 @@ mod <- lm(Sepal.Length ~ Species, data = data)
 summary(mod)
 ```
 #### **Output:**
+![Screenshot (55)](https://user-images.githubusercontent.com/112973674/219264677-3efc8188-d370-4ece-850d-399a430962e1.png)
+
 ----
 To prove that the intercept is the mean sepal length of the setosa species, we will use `which()` to get the indices of data$Species that is equal to setosa. The `which()` function is useful for obtaining the indices of values in a vector that meet a logical condition. The individual columns in a data frame can be treated as a vector since it is a one dimensional object.
 
@@ -222,14 +248,26 @@ levels(data$Species)
 ----  
      
 Here we can see reference group (intercept) has changed due to reveling.
+     
+----
+#### **R Code:**       
 ```R
 
 mod <- lm(Sepal.Length ~ Species, data = data)
 
 summary(mod)
 ```
+#### **Output:**
 
+![Screenshot (56)](https://user-images.githubusercontent.com/112973674/219264905-cd91eeb2-a22f-48fc-81c0-c25b5b370fd7.png)
+
+  
+----  
+       
 The `plot()` function can be used to create a scatterplot, the regression line is created using `abline()`.
+       
+----
+#### **R Code:**         
 ```R
 # Plot a scatter plot
 plot(data$Petal.Width, data$Sepal.Length,
@@ -238,9 +276,16 @@ plot(data$Petal.Width, data$Sepal.Length,
 mod <- lm(formula = Sepal.Length ~ Petal.Width, data = data)
 abline(mod)
 ```
+#### **Output:**
 
+![Screenshot (57)](https://user-images.githubusercontent.com/112973674/219265025-0d1ced8e-3d98-4d4f-85ff-816d846cf07f.png)
+
+
+----
 You can also use the `ggplot()` function the ggplot2 package, which is also installed when you install the Tidyverse. With ggplot, the plus sign is used to add additional features to your plot `+` . Overall, ggplot allows for more customization of your plots.
 
+----
+#### **R Code:**       
 ```R
 
 # Plot a scatter plot using ggplot2
@@ -250,7 +295,13 @@ ggplot(data, aes(x = Petal.Width, y = Sepal.Length)) +
   geom_smooth(method = "lm", se = FALSE) +
   labs(title = "Petal Width vs. Sepal Length", x = "Petal Width" , y = "Sepal Length")
 ```
+#### **Output:**
 
+
+![Screenshot (58)](https://user-images.githubusercontent.com/112973674/219265139-dbd67149-b4a2-4041-8f88-3fb23a7e14f0.png)
+
+
+----
 
 ## User-defined Functions
 
@@ -258,7 +309,7 @@ In `R`, you have the ability to create your own functions using `function()`. If
 
 General structure of a function:
 ```
-varaible <- function(argument1,argument2,...){
+variable <- function(argument1,argument2,...){
 Code 1
 Code 2
 }
@@ -283,6 +334,7 @@ rss_v2 <- function(model){
 
 Notice how despite the same variable name being used in the function, the "rss" variable declared outside the function has not changed.
 
+----
 #### **R Code:**     
 ```R
 rss_v1(mod_1)
