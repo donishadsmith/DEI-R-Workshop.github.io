@@ -18,5 +18,5 @@ The objective of this workshop is to introduce basic `R` programming knowledge a
 
 [RStudio](https://posit.co/download/rstudio-desktop/)
 
-RStudio is an integrated development environment(IDE), which is a graphical user interface(GUI) that offers tools such as a syntax-highlighting editor that make`R` easier to use. RStudio requires `R` 3.3.0+. Make sure to download the correct version of `R` for your operating system.
+RStudio is an integrated development environment(IDE), which is a graphical user interface(GUI) that offers tools, such as a syntax-highlighting editor that make`R`, easier to use. RStudio requires `R` 3.3.0+. Make sure to download the correct version of `R` for your operating system.
 
