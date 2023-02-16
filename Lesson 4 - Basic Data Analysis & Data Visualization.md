@@ -98,7 +98,7 @@ summary(aov_model)
 
 The ANOVA above shows that the sepal length is different among the species of flowers; however, we don't know which species, if not all, are significantly different. We can do two things:
 
-- We can conduct a post-hoc analysis such as a Tukey test or pairwise t-test using bonferonni's correction to determine which contrasts are significantly different while accounting for multiple comparisons.
+- We can conduct a post-hoc analysis such as a Tukey test (`TukeyHSD()`) or pairwise t-test (`pairwise.t.test()`) using bonferonni's correction to determine which contrasts are significantly different while accounting for multiple comparisons.
 
 ----
 #### **R Code:**
