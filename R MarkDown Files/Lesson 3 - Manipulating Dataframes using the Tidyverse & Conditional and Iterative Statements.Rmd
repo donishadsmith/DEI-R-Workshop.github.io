@@ -31,7 +31,7 @@ pacman::p_load(dplyr,tidyr)
 
 
 ```{r}
-data <- read.csv("C:/Users/donis/Documents/R Workshop/iris.csv")
+data <- read.csv("C:/Users/Documents/R Workshop/iris.csv")
 
 head(data)
 ```
@@ -273,7 +273,7 @@ while(logical expression){
 
 ```{r}
 #Multi-assignment; assigning the same dataframe to 3 variables
-data <- data_2 <- data_3 <- read.csv("C:/Users/donis/Documents/R Workshop/iris.csv")
+data <- data_2 <- data_3 <- read.csv("C:/Users/Documents/R Workshop/iris.csv")
 
 ```
 
