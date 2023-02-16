@@ -7,6 +7,8 @@
 
 # Lesson 1 -  Basic Data Types & Structures
 
+## Data Types
+
 Data types are essentially classifications/grouping of data values that only permit certain operations to be performed on it.
 
 `R` has several basic data types classes.
