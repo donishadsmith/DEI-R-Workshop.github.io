@@ -15,7 +15,7 @@ In this lesson, we cover ways to conduct basic linear regression, anova, and  pl
 ----
 #### **R Code:**
 ```R
-data <- read.csv("C:/Users/donis/Documents/R Workshop/iris.csv")
+data <- read.csv("C:/Users/Documents/R Workshop/iris.csv")
 ```
 ----
 
