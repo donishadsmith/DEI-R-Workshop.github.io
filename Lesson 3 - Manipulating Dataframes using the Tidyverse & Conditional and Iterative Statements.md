@@ -44,7 +44,7 @@ pacman::p_load(dplyr,tidyr)
 
 #### **R Code:**
 ```R
-data <- read.csv("C:/Users/donis/Documents/R Workshop/iris.csv")
+data <- read.csv("C:/Users/Documents/R Workshop/iris.csv")
 
 #The `head()` function shows the first few rows of your data frame
 head(data)
