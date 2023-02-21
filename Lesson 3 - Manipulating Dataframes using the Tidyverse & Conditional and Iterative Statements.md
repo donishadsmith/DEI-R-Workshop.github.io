@@ -408,7 +408,7 @@ while(logical expression){
 
 ```R
 #Multi-assignment; assigning the same dataframe to 3 variables
-data <- data_2 <- data_3 <- read.csv("C:/Users/donis/Documents/R Workshop/iris.csv")
+data <- data_2 <- data_3 <- read.csv("C:/Users/Documents/R Workshop/iris.csv")
 
 ```
 
