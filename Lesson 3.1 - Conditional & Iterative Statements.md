@@ -106,7 +106,7 @@ c(1,2,3) == c(1,2,5)
   
 ----
   
-*Note: how the logical values returned are reversed.*
+Note how the logical values returned are reversed.
 
 ----
 
