@@ -20,3 +20,5 @@ The objective of this workshop is to introduce basic `R` programming knowledge a
 
 RStudio is an integrated development environment(IDE), which is a graphical user interface(GUI) that offers tools, such as a syntax-highlighting editor that make`R`, easier to use. RStudio requires `R` 3.3.0+. Make sure to download the correct version of `R` for your operating system.
 
+**Note:**This Github will be updated with more topics in the future and refined.
+
